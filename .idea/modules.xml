@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/importmodule/importmodule.iml" filepath="$PROJECT_DIR$/importmodule/importmodule.iml" />
+      <module fileurl="file://$PROJECT_DIR$/opencsv-1.7/opencsv-1.7.iml" filepath="$PROJECT_DIR$/opencsv-1.7/opencsv-1.7.iml" />
+      <module fileurl="file://$PROJECT_DIR$/scanner4you.iml" filepath="$PROJECT_DIR$/scanner4you.iml" />
+    </modules>
+  </component>
+</project>

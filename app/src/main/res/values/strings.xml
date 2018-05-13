@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ok">OK</string>
+    <string name="permission_camera_rationale">Доступ к камере необходим для поиска QR кода</string>
+    <string name="no_camera_permission">Это приложение не может работать, потому что он не имеет разрешения камеры.  Приложение будет закрыто.</string>
+    <string name="low_storage_error">Не удается загрузить необходимые компоненты из-за нехватки памяти устройства</string>
+    <string name="title_activity_main">Scanner4you</string>
+    <string name="barcode_header">Нажмите &quot;Считать&quot; для считывания QR кода</string>
+    <string name="read_barcode">Считать</string>
+    <string name="auto_focus">Авто Фокус</string>
+    <string name="use_flash">Использовать фонарик</string>
+    <string name="barcode_success">QR код был успешно найден</string>
+    <string name="barcode_failure">QR код был не найден</string>
+    <string name="barcode_error">"Ошибка чтения QR кода: %1$s"</string>
+    <string name="Btn_table">Need text</string>
+    <string name="title_activity_table">TableActivity</string>
+    <string name="Table_text"> GGGGG
+        \n\n
+    </string>
+</resources>

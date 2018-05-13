@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="E:\PRG\scanner4you\app\src\main\assets"><file name="stats.csv" path="E:\PRG\scanner4you\app\src\main\assets\stats.csv"/></source><source path="E:\PRG\scanner4you\app\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="E:\PRG\scanner4you\app\src\debug\assets"/></dataSet></merger>
