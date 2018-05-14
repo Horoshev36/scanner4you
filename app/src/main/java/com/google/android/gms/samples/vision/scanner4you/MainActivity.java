@@ -5,6 +5,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.util.Log;
@@ -152,7 +153,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         }
 
                     }
-                    database.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
+                    insertOrUpdate(contentvalues);
+                    //database.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
 
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
@@ -177,7 +179,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             InputStream inStream = null;
             try {
-                inStream = manager.open("file:///android_asset/stats.csv");
+                inStream = manager.open(mCSVfile);
             } catch (IOException e) {
                 Log.d("mLog", "Ошибка");
                 e.printStackTrace();
@@ -200,7 +202,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
                     contentvalues.put(DBHelper.KEY_VALUE2, colums[2].trim());
                     contentvalues.put(DBHelper.KEY_VALUE3, colums[3].trim());
-                    db.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
+
+                    insertOrUpdate(contentvalues);
+                    //db.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
                 }
             } catch (IOException e) {
                 e.printStackTrace();
@@ -209,6 +213,29 @@ public class MainActivity extends Activity implements View.OnClickListener {
             db.endTransaction();
         }
 }
+    public void insertOrUpdate(ContentValues cv){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        int id = getID(cv);
+        if(id==-1)
+            db.insert(DBHelper.TABLE_CONTACTS, null, cv);
+        else
+            db.update(DBHelper.TABLE_CONTACTS, cv, "_id=?", new String[]{Integer.toString(id)});
+    }
+
+
+
+    private int getID(ContentValues cv){
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+        Cursor c = db.query(DBHelper.TABLE_CONTACTS,new String[]{"_id"}, "mainvalue =? AND value3=?",
+                new String[]{cv.getAsString(DBHelper.KEY_CHAR),cv.getAsString(DBHelper.KEY_VALUE3)},null,null,null,null);
+
+        if (c.moveToFirst()) //if the row exist then return the id
+            return c.getInt(c.getColumnIndex("_id"));
+        return -1;
+    }
+
+
 }
 
 

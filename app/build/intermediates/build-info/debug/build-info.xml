@@ -6,29 +6,26 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1526222683432"
+    timestamp="1526328050324"
     token="4508571363040543154"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1706" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="89" />
+        duration="0" />
     <task
         name="verifier"
-        duration="114" />
+        duration="0" />
 
     <artifact
         location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
         type="SPLIT" />
-    <artifact
-        location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-        type="SPLIT_MAIN" />
     <artifact
         location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
@@ -59,17 +56,17 @@
     <artifact
         location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
         type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1526222683432"
+        timestamp="1526328050324"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
-            type="SPLIT_MAIN" />
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
@@ -100,6 +97,9 @@
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
             type="SPLIT" />
+        <artifact
+            location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+            type="SPLIT_MAIN" />
     </build>
 
 </instant-run>
