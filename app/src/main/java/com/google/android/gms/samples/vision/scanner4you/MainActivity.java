@@ -63,6 +63,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         findViewById(R.id.btn_table).setOnClickListener(this);
         findViewById(R.id.read_barcode).setOnClickListener(this);
         findViewById(R.id.btn_import).setOnClickListener(this);
+        findViewById(R.id.btn_export).setOnClickListener(this);
+
 
         autoFocus.setChecked(true);
 
@@ -96,6 +98,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 Insert insert = new Insert(MainActivity.this);
                 break;
 
+            case R.id.btn_export:
+                //Need more program code
+                break;
 
             default:
 
