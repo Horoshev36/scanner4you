@@ -344,10 +344,6 @@
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\bbb7941f746475bc049b0b1b61815d01\\res\\drawable-xxxhdpi-v4\\abc_ic_star_half_black_16dp.png"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\raw_stats.csv.flat",
-        "source": "E:\\PRG\\scanner4you\\app\\src\\main\\res\\raw\\stats.csv"
-    },
-    {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_ic_star_black_16dp.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\bbb7941f746475bc049b0b1b61815d01\\res\\drawable-hdpi-v4\\abc_ic_star_black_16dp.png"
     },
@@ -1022,6 +1018,10 @@
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_ic_menu_copy_mtrl_am_alpha.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-24.2.0.aar\\bbb7941f746475bc049b0b1b61815d01\\res\\drawable-mdpi-v4\\abc_ic_menu_copy_mtrl_am_alpha.png"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_import.xml.flat",
+        "source": "E:\\PRG\\scanner4you\\app\\src\\main\\res\\layout\\activity_import.xml"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_text_select_handle_middle_mtrl_alpha.png.flat",
@@ -1778,6 +1778,10 @@
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal.9.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.4.0.aar\\8ba5350833c3f84ceb35e388632208ed\\res\\drawable-mdpi-v4\\common_google_signin_btn_icon_dark_normal.9.png"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\raw_stat.csv.flat",
+        "source": "E:\\PRG\\scanner4you\\app\\src\\main\\res\\raw\\stat.csv"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_abc_scrubber_control_to_pressed_mtrl_000.png.flat",

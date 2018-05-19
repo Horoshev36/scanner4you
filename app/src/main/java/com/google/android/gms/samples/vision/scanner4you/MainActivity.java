@@ -17,11 +17,15 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -100,6 +104,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.btn_export:
                 //Need more program code
+                try {
+                    readFileData("Внутренний общий накопитель/Android/data/com.google.android.gms/files/stats.csv");
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
                 break;
 
             default:
@@ -174,6 +183,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         dbHelper.close();
     }
+
+
         public class Insert {
 
             Insert(Context context){
@@ -218,6 +229,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
             db.endTransaction();
         }
 }
+
+
     public void insertOrUpdate(ContentValues cv){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
 
@@ -227,9 +240,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else
             db.update(DBHelper.TABLE_CONTACTS, cv, "_id=?", new String[]{Integer.toString(id)});
     }
-
-
-
     private int getID(ContentValues cv){
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor c = db.query(DBHelper.TABLE_CONTACTS,new String[]{"_id"}, "mainvalue =? AND value3=?",
@@ -239,6 +249,48 @@ public class MainActivity extends Activity implements View.OnClickListener {
             return c.getInt(c.getColumnIndex("_id"));
         return -1;
     }
+
+    void readFileData(String path) throws FileNotFoundException
+    {
+
+        String[] data;
+        File file = new File(path);
+        if (file.exists())
+        {
+            BufferedReader br = new BufferedReader(new FileReader(file));
+            try
+            {
+                String csvLine;
+                while ((csvLine = br.readLine()) != null)
+                {
+                    data=csvLine.split(";");
+                    try
+                    {
+                        Toast.makeText(getApplicationContext(),data[0]+" "+data[1]+"  "+data[2]+" "+data[3]+" ",Toast.LENGTH_SHORT).show();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.e("Problem",e.toString());
+                    }
+                }
+            }
+            catch (IOException ex)
+            {
+                throw new RuntimeException("Error in reading CSV file: "+ex);
+            }
+        }
+        else
+        {
+            Toast.makeText(getApplicationContext(),"file not exists", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+/*
+csv file data
+
+17IT1,GOOGLE
+17IT2,AMAZON
+17IT3,FACEBOOK*/
 
 
 }

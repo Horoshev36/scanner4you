@@ -6,7 +6,7 @@
     <uses-feature android:name="android.hardware.camera" />
 
     <uses-permission android:name="android.permission.CAMERA" />
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
@@ -39,6 +39,7 @@
         <activity
             android:name=".TableActivity"
             android:label="@string/title_activity_table" />
+        <activity android:name=".activity_import"></activity>
     </application>
 
 </manifest>

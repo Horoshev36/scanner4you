@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
+ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
 MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\8ba5350833c3f84ceb35e388632208ed\AndroidManifest.xml:16:1-24:12
@@ -20,20 +20,20 @@ MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silico
 MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:17:1-27:12
 MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:17:1-27:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
-INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
+INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
 	package
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:3:5-64
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
-		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
+		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
-		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-44:12
+		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-45:12
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:11-69
@@ -48,7 +48,7 @@ ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:8:5-65
 	android:name
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:8:22-62
 uses-permission#android.permission.READ_EXTERNAL_STORAGE
-ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:9:5-79
+ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:9:5-80
 	android:name
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:9:22-77
 uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
@@ -56,7 +56,7 @@ ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:10:5-81
 	android:name
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:10:22-78
 application
-ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:12:5-42:19
+ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:12:5-43:19
 MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:5:5-20
@@ -143,6 +143,10 @@ ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:39:9-41:60
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:41:13-57
 	android:name
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:40:13-42
+activity#com.google.android.gms.samples.vision.scanner4you.activity_import
+ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:42:9-62
+	android:name
+		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:42:19-50
 uses-sdk
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
