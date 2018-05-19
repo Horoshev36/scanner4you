@@ -105,7 +105,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_export:
                 //Need more program code
                 try {
-                    readFileData("Внутренний общий накопитель/Android/data/com.google.android.gms/files/stats.csv");
+                    readFileData("external/Android/data/com.google.android.gms/files/stats.csv");
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
