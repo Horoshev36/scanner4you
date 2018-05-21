@@ -103,21 +103,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.btn_import:
                 Log.d("mLog", "Key insert pressed");
-                try {
-                    Insert insert = new Insert(MainActivity.this);
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                Insert insert = new Insert(MainActivity.this);
 
                 break;
 
             case R.id.btn_export:
                 //Need more program code
-                try {
-                    InsertFile insertFile = new InsertFile();
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
+                InsertFile insertFile = new InsertFile();
                 break;
 
             default:
