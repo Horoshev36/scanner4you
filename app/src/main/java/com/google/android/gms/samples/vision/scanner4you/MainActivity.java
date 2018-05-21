@@ -1,17 +1,26 @@
 package com.google.android.gms.samples.vision.scanner4you;
 
+import android.Manifest;
 import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +33,10 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.sql.SQLDataException;
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -33,6 +46,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button btn_import;
     Button btn_export;
 
+    public static final int REQUEST_CODE_PERMISSION_READ_EXTERNAL_STORAGE=1;
     private static final int RC_BARCODE_CAPTURE = 9001;
     private static final String TAG = "BarcodeMain";
     // use a compound button so either checkbox or switch widgets work.
@@ -66,8 +80,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         dbHelper = new DBHelper(this);
     }
-
-
     @Override
     public void onClick(View v) {
 
@@ -96,12 +108,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
+
                 break;
 
             case R.id.btn_export:
                 //Need more program code
                 try {
-                    readFileData();
+                    InsertFile insertFile = new InsertFile();
                 } catch (FileNotFoundException e) {
                     e.printStackTrace();
                 }
@@ -112,8 +125,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
         }
     }
-
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data)
     {
@@ -180,64 +191,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
         dbHelper.close();
     }
-    public class Insert
-    {
 
-            Insert(Context context) {
-
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
-
-                //чтение файла
-                Toast.makeText(getApplicationContext(),"Чтение файла", Toast.LENGTH_SHORT).show();
-                InputStream file = null;
-                AssetManager mngr = getAssets();
-                try {
-                    file = mngr.open("Files/stats.csv");
-                } catch (final IOException e) {
-                    e.printStackTrace();
-                }
-
-          //   AssetManager manager = context.getAssets();
-          // String mCSVfile = "stats.csv";
-          // //InputStream inStream = null;
-          // try {
-          //     inStream = manager.open(mCSVfile);
-          // } catch (IOException e) {
-          //     Log.d("mLog", "Ошибка");
-          //     e.printStackTrace();
-          // }
-
-
-            //портирование csv в SQLite
-                Toast.makeText(getApplicationContext(),"Начало портирования", Toast.LENGTH_SHORT).show();
-            String line = "";
-            db.beginTransaction();
-                Toast.makeText(getApplicationContext(),"Объявление буффера", Toast.LENGTH_SHORT).show();
-            try (BufferedReader buffer = new BufferedReader(new FileReader(String.valueOf(file)))) {
-                while ((line = buffer.readLine()) != null) {
-                    String[] colums = line.split(";");
-                    if (colums.length != 4) {
-                        Log.d("mLog", "Skipping Bad CSV Row");
-                        continue;
-                    }
-                    ContentValues contentvalues = new ContentValues(3);
-
-
-                    contentvalues.put(DBHelper.KEY_CHAR, colums[0].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE2, colums[2].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE3, colums[3].trim());
-
-                    insertOrUpdate(contentvalues);
-                    //db.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            db.setTransactionSuccessful();
-            db.endTransaction();
-        }
-}
     public void insertOrUpdate(ContentValues cv)
     {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
@@ -258,34 +212,34 @@ public class MainActivity extends Activity implements View.OnClickListener {
             return c.getInt(c.getColumnIndex("_id"));
         return -1;
     }
-    void readFileData() throws FileNotFoundException
+
+    public class Insert
     {
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
-        String path = "/sdcard/Android/data/com.google.android.gms/files/stats.csv";
-       // File dir = Environment.getExternalStorageDirectory();
-       // File myfile = new File(dir, "Android/data/com.google.android.gms/files/stats.csv");
-
-
-        File file = new File(path);
-        Log.d("mLog", path);
-        if (file.exists())
-        {
-            Toast.makeText(getApplicationContext(),"Объявление буффера", Toast.LENGTH_SHORT).show();
-            //BufferedReader br = new BufferedReader(new FileReader(file));
-            BufferedReader br = new BufferedReader(new FileReader(file));
-            String line = "";
-            Toast.makeText(getApplicationContext(),"Начало портирования", Toast.LENGTH_SHORT).show();
-            db.beginTransaction();
+        Insert(Context context) {
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            //чтение файла
+            AssetManager manager = context.getAssets();
+            String mCSVfile = "stats.csv";
+            InputStream inStream = null;
             try {
-                while ((line = br.readLine()) != null) {
-                    Toast.makeText(getApplicationContext(),"Чтение строк", Toast.LENGTH_SHORT).show();
+                inStream = manager.open(mCSVfile);
+            } catch (IOException e) {
+                Log.d("mLog", "Ошибка");
+                e.printStackTrace();
+            }
+            //портирование csv в SQLite
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
+            String line = "";
+            db.beginTransaction();
+            Toast.makeText(getApplicationContext(),"Начало портирования", Toast.LENGTH_SHORT).show();
+            try {
+                while ((line = buffer.readLine()) != null) {
                     String[] colums = line.split(";");
                     if (colums.length != 4) {
                         Log.d("mLog", "Skipping Bad CSV Row");
                         continue;
                     }
                     ContentValues contentvalues = new ContentValues(3);
-                    Toast.makeText(getApplicationContext(),"Insert", Toast.LENGTH_SHORT).show();
 
                     contentvalues.put(DBHelper.KEY_CHAR, colums[0].trim());
                     contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
@@ -296,38 +250,67 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
             } catch (IOException e) {
                 e.printStackTrace();
-                Toast.makeText(getApplicationContext(),"Error", Toast.LENGTH_SHORT).show();
             }
             db.setTransactionSuccessful();
             db.endTransaction();
-
-            // while ((csvLine = br.readLine()) != null)
-            // {
-            //     data=csvLine.split(";");
-            //     try
-            //     {
-            //         Toast.makeText(getApplicationContext(),data[0]+" "+data[1]+"  "+data[2]+" "+data[3]+" ",Toast.LENGTH_SHORT).show();
-            //     barcodeValue.setText(data[0]+" "+data[1]+"  "+data[2]+" "+data[3]+" ");
-            //     }
-            //     catch (Exception e)
-            //     {
-            //         Log.e("Problem",e.toString());
-            //     }
-            // }
-        }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"file not exists", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getApplicationContext(),"Конец портирования", Toast.LENGTH_SHORT).show();
         }
     }
 
-/*
-csv file data
 
-17IT1,GOOGLE
-17IT2,AMAZON
-17IT3,FACEBOOK*/
+    public class InsertFile {
+        InsertFile() {
+            SQLiteDatabase db = dbHelper.getWritableDatabase();
+            String s = "";
+            new Message("Установка буффера");
+            int permissionStatusR = ContextCompat.checkSelfPermission(MainActivity.this, Manifest.permission.READ_EXTERNAL_STORAGE);
 
+            if (permissionStatusR == PackageManager.PERMISSION_GRANTED) {
+                //readContacts();
+
+            try(BufferedReader br = new BufferedReader(new FileReader
+                    ("/storage/32FC-8A50/Android/data/com.google.android.gms/files/pou.csv")))
+
+            {
+                //чтение построчно
+                new Message("Начало портирования");
+                db.beginTransaction();
+                while((s=br.readLine())!=null){
+                    String[] colums = s.split(";");
+                    if (colums.length != 4) {
+                        Log.d("mLog", "Skipping Bad CSV Row");
+                        continue;
+                    }
+                    ContentValues contentvalues = new ContentValues(3);
+
+                    contentvalues.put(DBHelper.KEY_CHAR, colums[0].trim());
+                    contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
+                    contentvalues.put(DBHelper.KEY_VALUE2, colums[2].trim());
+                    contentvalues.put(DBHelper.KEY_VALUE3, colums[3].trim());
+
+                    insertOrUpdate(contentvalues);
+
+                    System.out.println(s);
+                }
+                db.setTransactionSuccessful();
+                db.endTransaction();
+                new Message("Конец портирования");
+            }
+            catch(IOException ex){
+
+                System.out.println(ex.getMessage());
+            }
+
+            } else {
+                ActivityCompat.requestPermissions(MainActivity.this, new String[] {Manifest.permission.READ_EXTERNAL_STORAGE},
+                        REQUEST_CODE_PERMISSION_READ_EXTERNAL_STORAGE);
+            }
+        }
+    }
+
+    public class Message {
+        Message(String s){Toast.makeText(getApplicationContext(),s, Toast.LENGTH_SHORT).show(); }
+    }
 
 }
 
