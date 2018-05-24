@@ -4,6 +4,23 @@
             "outputFile": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-bs\\values-bs.xml",
             "map": [
                 {
+                    "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,224,333,440,526,630,752,834,915,1001,1104,1209,1307,1412,1525,1630,1805,1902",
+                        "endColumns": "118,108,106,85,103,121,81,80,85,102,104,97,104,112,104,174,96,83",
+                        "endOffsets": "219,328,435,521,625,747,829,910,996,1099,1204,1302,1407,1520,1625,1800,1897,1981"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,39",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,224,333,440,526,630,752,834,915,1001,1104,1209,1307,1412,1525,1630,1805,5010",
+                        "endColumns": "118,108,106,85,103,121,81,80,85,102,104,97,104,112,104,174,96,83",
+                        "endOffsets": "219,328,435,521,625,747,829,910,996,1099,1204,1302,1407,1520,1625,1800,1897,5089"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-basement-9.4.0.aar\\17dd73c0ebdddf66adcc974df12f08ee\\res\\values-bs\\values.xml",
                     "from": {
                         "startLines": "4",
@@ -13,11 +30,28 @@
                         "endOffsets": "561"
                     },
                     "to": {
-                        "startLines": "10",
+                        "startLines": "27",
                         "startColumns": "4",
-                        "startOffsets": "1359",
+                        "startOffsets": "3156",
                         "endColumns": "234",
-                        "endOffsets": "1589"
+                        "endOffsets": "3386"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a1ea394b5161826b619a0cde1c41088\\res\\values-bs\\values-bs.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "40",
+                        "startColumns": "4",
+                        "startOffsets": "5094",
+                        "endColumns": "100",
+                        "endOffsets": "5190"
                     }
                 },
                 {
@@ -30,11 +64,11 @@
                         "endOffsets": "432,624,752,881,1100,1319,1447,1578,1822,1944,2053,2245,2374,2583,2714,2890,2988,3083,3197"
                     },
                     "to": {
-                        "startLines": "2,3,4,5,6,7,8,9,11,12,13,14,15,16,17,18,19,20,21",
+                        "startLines": "19,20,21,22,23,24,25,26,28,29,30,31,32,33,34,35,36,37,38",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "105,213,405,533,662,881,1100,1228,1594,1838,1960,2069,2261,2390,2599,2730,2906,3004,3099",
+                        "startOffsets": "1902,2010,2202,2330,2459,2678,2897,3025,3391,3635,3757,3866,4058,4187,4396,4527,4703,4801,4896",
                         "endColumns": "107,191,127,128,218,218,127,130,243,121,108,191,128,208,130,175,97,94,113",
-                        "endOffsets": "208,400,528,657,876,1095,1223,1354,1833,1955,2064,2256,2385,2594,2725,2901,2999,3094,3208"
+                        "endOffsets": "2005,2197,2325,2454,2673,2892,3020,3151,3630,3752,3861,4053,4182,4391,4522,4698,4796,4891,5005"
                     }
                 }
             ]

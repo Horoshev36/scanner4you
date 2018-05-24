@@ -4,22 +4,27 @@ ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
-MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:design:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\19206c84c2884d600fdcd90efe564aba\AndroidManifest.xml:17:1-22:12
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\8ba5350833c3f84ceb35e388632208ed\AndroidManifest.xml:16:1-24:12
 MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\48860b8ac45a78242c3f0abce0a0310b\AndroidManifest.xml:2:1-6:12
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\17dd73c0ebdddf66adcc974df12f08ee\AndroidManifest.xml:16:1-26:12
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\d54bb379300efff094621f4b95f057fa\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8dae8cdb3adca4e1eb052f8ea01639da\AndroidManifest.xml:17:1-22:12
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\dbbeda45d989e9c093aa4bffdf13baf9\AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\b17c31da1dde69565d1596c5e601dddd\AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\4e3d7ab832a12e33589a8c20ff97887e\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\18b0405ae5793e4477b12ba7aa11771f\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\eced0b8d38feb0c25890177739f76112\AndroidManifest.xml:17:1-24:12
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\a6a5c8f14ed039b1619f4eccc131e857\AndroidManifest.xml:17:1-25:12
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:17:1-27:12
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\fb5fce315c4d1d02c05eba4bfa2a41ce\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7af9aa9c48c2fede86453712c5592e6d\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b17159ef893206587418082561a506c2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\92753edbc9239d0e02f46891551aaae4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\becf8e53defc8ce2c67d84475dcfc40e\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d73e7ad85ff461aac50b07de77fbe064\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\457c68e106dc4031d6f99c655c5efa9b\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1f380c3c67d2f66403e167a0741e7fe1\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\5a234b3a614b5401782870f4969a4aa9\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1a1ea394b5161826b619a0cde1c41088\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97dda141f44f176507a680503d3be81f\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6740c3359c540270805a4270818f8657\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\950e448b7c51a7812154baf7f81a4804\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2db7df5b747a689fc4c8f9cd6b0a259c\AndroidManifest.xml:17:1-22:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:2:1-47:12
@@ -57,8 +62,6 @@ ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:10:5-81
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:10:22-78
 application
 ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:14:5-45:19
-MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\8ba5350833c3f84ceb35e388632208ed\AndroidManifest.xml:19:5-23:19
@@ -67,26 +70,8 @@ MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Silicon\
 MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\48860b8ac45a78242c3f0abce0a0310b\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\17dd73c0ebdddf66adcc974df12f08ee\AndroidManifest.xml:20:5-24:19
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\17dd73c0ebdddf66adcc974df12f08ee\AndroidManifest.xml:20:5-24:19
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\d54bb379300efff094621f4b95f057fa\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\d54bb379300efff094621f4b95f057fa\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\dbbeda45d989e9c093aa4bffdf13baf9\AndroidManifest.xml:9:5-20
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\dbbeda45d989e9c093aa4bffdf13baf9\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\4e3d7ab832a12e33589a8c20ff97887e\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\4e3d7ab832a12e33589a8c20ff97887e\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\18b0405ae5793e4477b12ba7aa11771f\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\18b0405ae5793e4477b12ba7aa11771f\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\eced0b8d38feb0c25890177739f76112\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\eced0b8d38feb0c25890177739f76112\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\a6a5c8f14ed039b1619f4eccc131e857\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\a6a5c8f14ed039b1619f4eccc131e857\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:25:5-20
 	android:supportsRtl
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml:20:9-35
 	android:label
@@ -151,8 +136,8 @@ uses-sdk
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
-MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:design:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\23d7a97487d4ea13c0be0e4d0a05766d\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\19206c84c2884d600fdcd90efe564aba\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\design-27.1.1.aar\19206c84c2884d600fdcd90efe564aba\AndroidManifest.xml:20:5-44
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:4:5-42
 MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\5a3637414eec8edfb9ec79c67f01d2e2\AndroidManifest.xml:4:5-42
 MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\8ba5350833c3f84ceb35e388632208ed\AndroidManifest.xml:18:5-42
@@ -161,32 +146,40 @@ MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Silicon\
 MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\48860b8ac45a78242c3f0abce0a0310b\AndroidManifest.xml:4:5-43
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\17dd73c0ebdddf66adcc974df12f08ee\AndroidManifest.xml:18:5-42
 MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\17dd73c0ebdddf66adcc974df12f08ee\AndroidManifest.xml:18:5-42
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\d54bb379300efff094621f4b95f057fa\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\d54bb379300efff094621f4b95f057fa\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8dae8cdb3adca4e1eb052f8ea01639da\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-v4-27.1.1.aar\8dae8cdb3adca4e1eb052f8ea01639da\AndroidManifest.xml:20:5-44
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\dbbeda45d989e9c093aa4bffdf13baf9\AndroidManifest.xml:5:5-7:41
 MERGED from [com.android.support.constraint:constraint-layout:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.1.0.aar\dbbeda45d989e9c093aa4bffdf13baf9\AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\b17c31da1dde69565d1596c5e601dddd\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\b17c31da1dde69565d1596c5e601dddd\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\4e3d7ab832a12e33589a8c20ff97887e\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\4e3d7ab832a12e33589a8c20ff97887e\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\18b0405ae5793e4477b12ba7aa11771f\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\18b0405ae5793e4477b12ba7aa11771f\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\eced0b8d38feb0c25890177739f76112\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\eced0b8d38feb0c25890177739f76112\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\a6a5c8f14ed039b1619f4eccc131e857\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\a6a5c8f14ed039b1619f4eccc131e857\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\5662dbc045688c898a8e964f8f89d95f\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\51cc2aa25cd9df060ef70a6f048bb817\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-compat:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\bfb1e4a1c6f389532858b2a1dd12e964\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\fb5fce315c4d1d02c05eba4bfa2a41ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-27.1.1.aar\fb5fce315c4d1d02c05eba4bfa2a41ce\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7af9aa9c48c2fede86453712c5592e6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-27.1.1.aar\7af9aa9c48c2fede86453712c5592e6d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b17159ef893206587418082561a506c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-fragment-27.1.1.aar\b17159ef893206587418082561a506c2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\92753edbc9239d0e02f46891551aaae4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-27.1.1.aar\92753edbc9239d0e02f46891551aaae4\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\becf8e53defc8ce2c67d84475dcfc40e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-ui-27.1.1.aar\becf8e53defc8ce2c67d84475dcfc40e\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d73e7ad85ff461aac50b07de77fbe064\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-core-utils-27.1.1.aar\d73e7ad85ff461aac50b07de77fbe064\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\457c68e106dc4031d6f99c655c5efa9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\transition-27.1.1.aar\457c68e106dc4031d6f99c655c5efa9b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1f380c3c67d2f66403e167a0741e7fe1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-27.1.1.aar\1f380c3c67d2f66403e167a0741e7fe1\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\5a234b3a614b5401782870f4969a4aa9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-media-compat-27.1.1.aar\5a234b3a614b5401782870f4969a4aa9\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1a1ea394b5161826b619a0cde1c41088\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.1.1] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\support-compat-27.1.1.aar\1a1ea394b5161826b619a0cde1c41088\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97dda141f44f176507a680503d3be81f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\97dda141f44f176507a680503d3be81f\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6740c3359c540270805a4270818f8657\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:livedata-core:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\livedata-core-1.1.0.aar\6740c3359c540270805a4270818f8657\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\950e448b7c51a7812154baf7f81a4804\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:viewmodel:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\viewmodel-1.1.0.aar\950e448b7c51a7812154baf7f81a4804\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2db7df5b747a689fc4c8f9cd6b0a259c\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.core:runtime:1.1.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\runtime-1.1.0.aar\2db7df5b747a689fc4c8f9cd6b0a259c\AndroidManifest.xml:20:5-44
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:appcompat-v7:24.2.0] C:\Users\Silicon\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\bbb7941f746475bc049b0b1b61815d01\AndroidManifest.xml:23:9-75
 	android:targetSdkVersion
 		INJECTED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
 		ADDED from E:\PRG\scanner4you\app\src\main\AndroidManifest.xml
