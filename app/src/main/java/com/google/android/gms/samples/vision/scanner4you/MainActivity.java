@@ -333,11 +333,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    @SuppressLint({"SetWorldWritable", "SetWorldReadable"})
     private void exportDB() {
 
         File dbFile=getDatabasePath("contactBD.db");
         DBHelper dbhelper = new DBHelper(getApplicationContext());
-        File exportDir = new File("/sdcard", "");
+        File exportDir = new File("/sdcard/my-logs", "");
 
         if (!exportDir.exists())
         {
@@ -348,7 +349,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         try
         {
             file.createNewFile();
-            CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+
+            CSVWriter csvWrite = new CSVWriter(new FileWriter(file), ';');
             SQLiteDatabase db = dbhelper.getReadableDatabase();
             Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
             csvWrite.writeNext(curCSV.getColumnNames());

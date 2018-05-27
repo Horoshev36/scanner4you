@@ -2,34 +2,67 @@
 <instant-run
     abi="arm64-v8a,armeabi-v7a,armeabi"
     api-level="24"
-    build-mode="HOT_WARM"
+    build-mode="FULL"
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1527460071018"
+    timestamp="1527464836984"
     token="4508571363040543154"
-    verifier="COMPATIBLE" >
+    verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="1679" />
+        duration="0" />
     <task
         name="instant-run-dex"
-        duration="1006" />
+        duration="0" />
     <task
         name="instant-run-transform"
-        duration="100" />
+        duration="0" />
     <task
         name="verifier"
-        duration="10" />
+        duration="0" />
 
     <artifact
-        location="E:\PRG\scanner4you\app\build\intermediates\reload-dex\debug\classes.dex"
-        type="RELOAD_DEX" />
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\dep\dependencies.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_4.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_7.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_5.apk"
+        type="SPLIT" />
+    <artifact
+        location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
+        type="SPLIT_MAIN" />
 
     <build
         build-mode="FULL"
-        timestamp="1527459805189"
+        timestamp="1527464836984"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -67,30 +100,6 @@
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\instant-run-apk\debug\app-debug.apk"
             type="SPLIT_MAIN" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1527459985351"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\builds\debug\1527459985351\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1527460010422"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\builds\debug\1527460010422\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1527460071018"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\reload-dex\debug\classes.dex"
-            type="RELOAD_DEX" />
     </build>
 
 </instant-run>
