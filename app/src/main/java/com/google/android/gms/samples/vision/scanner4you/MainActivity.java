@@ -55,7 +55,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button btn_import;
     Button btn_export;
     String FILENAME_INPUT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files/pou.csv";
-    String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files/pouExit.csv";
+    String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files";
     //String FILENAME_INPUT = "pou.csv";
     //String FILENAME_EXPORT = "pouExit.csv";
 
@@ -135,7 +135,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 //Need more program code
                 //ExportFile();
                 exportDB();
-                //new ExportDatabaseCSVTask();
                 break;
 
             default:
@@ -285,6 +284,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         }
     }
+    public static class LogMessage{
+        LogMessage(String s){
+            Log.d("mLog", s);
+        }
+    }
 
     public class Insert {
         Insert(Context context) {
@@ -329,145 +333,41 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
+    private void exportDB() {
 
-    void ExportFile() {
-        dbHelper = new DBHelper(MainActivity.this);
+        File dbFile=getDatabasePath("contactBD.db");
+        DBHelper dbhelper = new DBHelper(getApplicationContext());
+        File exportDir = new File("/sdcard", "");
 
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
-        String mLog = ("SQLite  \n\n");
-
-        Cursor cursor = database.query(DBHelper.TABLE_CONTACTS, null, null, null, null, null, null);
-
-        if (cursor.moveToFirst()) {
-            int charvalue = cursor.getColumnIndex(DBHelper.KEY_CHAR);
-            int valueIndex = cursor.getColumnIndex(DBHelper.KEY_VALUE);
-            int value2Index = cursor.getColumnIndex(DBHelper.KEY_VALUE2);
-            int value3Index = cursor.getColumnIndex(DBHelper.KEY_VALUE3);
-            try {
-                BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
-                        openFileOutput(FILENAME_EXPORT, MODE_PRIVATE)));
-                bw.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-
-            do {
-                Log.d("mLog", "Char = " + cursor.getString(charvalue) +
-                        ", value = " + cursor.getString(valueIndex) +
-                        ", value2 = " + cursor.getString(value2Index) +
-                        ", value3 = " + cursor.getString(value3Index));
-                mLog += "Char = " + cursor.getString(charvalue) + "\n" + " value = " + cursor.getString(valueIndex) + "\n" + " value2 = " + cursor.getString(value2Index) + "\n" + " value3 = " + cursor.getString(value3Index) + "\n\n";
-                try {
-                    BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(
-                            openFileOutput(FILENAME_EXPORT, MODE_APPEND)));
-                    bw.write(cursor.getString(charvalue) + ";" + cursor.getString(valueIndex) + ";" + cursor.getString(value2Index) + ";" + cursor.getString(value3Index));
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            } while (cursor.moveToNext());
-            Log.d("mLog", "Файл записан");
-            new Message("Файл записан");
-        } else
-            Log.d("mLog", "0 rows");
-        new Message("База пустая проверьте данные!");
-    }
-
-    void exportDB() {
-
-        int permissionStatusW = ContextCompat.checkSelfPermission(this,
-                Manifest.permission.WRITE_EXTERNAL_STORAGE);
-        if (permissionStatusW == PackageManager.PERMISSION_GRANTED) {
-            DBHelper dbhelper = new DBHelper(this);
-            File exportDir = new File("/storage/32FC-8A50/Android/data/com.google.android.gms/files/", "");
-            if (!exportDir.exists()) {
-                exportDir.mkdirs();
-                Log.d("mLog", "Skipping Bad CSV Row "+exportDir.mkdirs());
-            }
-            File file = new File(exportDir, "pouExit.csv");//FILENAME_EXPORT);
-            try {
-                file.createNewFile();
-                CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
-                SQLiteDatabase db = dbhelper.getReadableDatabase();
-                Cursor curCSV = db.rawQuery("SELECT * FROM contacts", null);
-                csvWrite.writeNext(curCSV.getColumnNames());
-                while (curCSV.moveToNext()) {
-                    //Which column you want to exprort
-                    String arrStr[] = {curCSV.getString(0), curCSV.getString(1), curCSV.getString(2), curCSV.getString(3)};
-                    csvWrite.writeNext(arrStr);
-                }
-                csvWrite.close();
-                curCSV.close();
-                new Message("Успешно");
-            } catch (Exception sqlEx) {
-                Log.e("MainActivity", sqlEx.getMessage(), sqlEx);
-                new Message("Error");
-            }
-        } else {
-            ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                    REQUEST_CODE_PERMISSION_WRITE_EXTERNAL_STORAGE);
-        }
-    }
-
-    private class ExportDatabaseCSVTask extends AsyncTask<String ,String, String> {
-        private final ProgressDialog dialog = new ProgressDialog(MainActivity.this);
-        @Override
-        protected void onPreExecute() {
-            this.dialog.setMessage("Exporting database...");
-            this.dialog.show();
+        if (!exportDir.exists())
+        {
+            exportDir.mkdirs();
         }
 
-        protected String doInBackground(final String... args){
-            File exportDir = new File(Environment.getExternalStorageDirectory(), "");
-            if (!exportDir.exists()) {
-                exportDir.mkdirs();
-            }
-
-            File file = new File(exportDir, "pouExit.csv");
-            try {
-
-                file.createNewFile();
-                CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
-
-                //data
-                ArrayList<String> listdata= new ArrayList<String>();
-                listdata.add("Aniket");
-                listdata.add("Shinde");
-                listdata.add("pune");
-                listdata.add("anything@anything");
-                //Headers
-                String arrStr1[] ={"First Name", "Last Name", "Address", "Email"};
-                csvWrite.writeNext(arrStr1);
-
-                String arrStr[] ={listdata.get(0), listdata.get(1), listdata.get(2), listdata.get(3)};
+        File file = new File(exportDir, "pouExit.csv");
+        try
+        {
+            file.createNewFile();
+            CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+            SQLiteDatabase db = dbhelper.getReadableDatabase();
+            Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
+            csvWrite.writeNext(curCSV.getColumnNames());
+            while(curCSV.moveToNext())
+            {
+                //Which column you want to exprort
+                String arrStr[] ={curCSV.getString(4),curCSV.getString(1), curCSV.getString(2),curCSV.getString(3)};
                 csvWrite.writeNext(arrStr);
-
-                csvWrite.close();
-                return "";
             }
-            catch (IOException e){
-                Log.e("MainActivity", e.getMessage(), e);
-                return "";
-            }
+            csvWrite.close();
+            curCSV.close();
+            new Message("Success!");
+        } catch(IOException IoEx)        {
+            Log.e("mLog", IoEx.getMessage(), IoEx);
+            new Message("Error");
         }
-
-        @SuppressLint("NewApi")
-        @Override
-        protected void onPostExecute(final String success) {
-
-            if (this.dialog.isShowing()){
-                this.dialog.dismiss();
-            }
-            if (success.isEmpty()){
-                Toast.makeText(MainActivity.this, "Export successful!", Toast.LENGTH_SHORT).show();
-            }
-            else {
-                Toast.makeText(MainActivity.this, "Export failed!", Toast.LENGTH_SHORT).show();
-            }
+        catch(Exception sqlEx){
+            Log.e("mLog", sqlEx.getMessage(), sqlEx);
+            new Message("Error");
         }
     }
-
 }
-
-
-
-
