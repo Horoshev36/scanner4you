@@ -6,22 +6,22 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1527199544759"
+    timestamp="1527449546681"
     token="4508571363040543154"
     verifier="COMPATIBLE" >
 
     <task
         name="javac"
-        duration="1242" />
+        duration="1624" />
     <task
         name="instant-run-dex"
-        duration="868" />
+        duration="889" />
     <task
         name="instant-run-transform"
-        duration="28" />
+        duration="74" />
     <task
         name="verifier"
-        duration="6" />
+        duration="21" />
 
     <artifact
         location="E:\PRG\scanner4you\app\build\intermediates\reload-dex\debug\classes.dex"
@@ -29,7 +29,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1527199159807"
+        timestamp="1527449416019"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
@@ -70,23 +70,7 @@
     </build>
     <build
         build-mode="HOT_WARM"
-        timestamp="1527199323646"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\builds\debug\1527199323646\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1527199377191"
-        verifier="COMPATIBLE" >
-        <artifact
-            location="E:\PRG\scanner4you\app\build\intermediates\builds\debug\1527199377191\classes.dex"
-            type="RELOAD_DEX" />
-    </build>
-    <build
-        build-mode="HOT_WARM"
-        timestamp="1527199544759"
+        timestamp="1527449546681"
         verifier="COMPATIBLE" >
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\reload-dex\debug\classes.dex"

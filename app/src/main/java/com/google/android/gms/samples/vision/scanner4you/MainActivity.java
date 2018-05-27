@@ -1,7 +1,9 @@
 package com.google.android.gms.samples.vision.scanner4you;
 
 import android.Manifest;
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -9,6 +11,7 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
@@ -132,7 +135,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 //Need more program code
                 //ExportFile();
                 exportDB();
-
+                //new ExportDatabaseCSVTask();
                 break;
 
             default:
@@ -371,11 +374,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     void exportDB() {
 
-        int permissionStatusW = ContextCompat.checkSelfPermission(MainActivity.this,
+        int permissionStatusW = ContextCompat.checkSelfPermission(this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (permissionStatusW == PackageManager.PERMISSION_GRANTED) {
-            DBHelper dbhelper = new DBHelper(MainActivity.this);
-            File exportDir = new File(Environment.getExternalStorageDirectory(), "");
+            DBHelper dbhelper = new DBHelper(this);
+            File exportDir = new File("/storage/32FC-8A50/Android/data/com.google.android.gms/files/", "");
             if (!exportDir.exists()) {
                 exportDir.mkdirs();
                 Log.d("mLog", "Skipping Bad CSV Row "+exportDir.mkdirs());
@@ -394,14 +397,75 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 }
                 csvWrite.close();
                 curCSV.close();
+                new Message("Успешно");
             } catch (Exception sqlEx) {
                 Log.e("MainActivity", sqlEx.getMessage(), sqlEx);
+                new Message("Error");
             }
         } else {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     REQUEST_CODE_PERMISSION_WRITE_EXTERNAL_STORAGE);
         }
     }
+
+    private class ExportDatabaseCSVTask extends AsyncTask<String ,String, String> {
+        private final ProgressDialog dialog = new ProgressDialog(MainActivity.this);
+        @Override
+        protected void onPreExecute() {
+            this.dialog.setMessage("Exporting database...");
+            this.dialog.show();
+        }
+
+        protected String doInBackground(final String... args){
+            File exportDir = new File(Environment.getExternalStorageDirectory(), "");
+            if (!exportDir.exists()) {
+                exportDir.mkdirs();
+            }
+
+            File file = new File(exportDir, "pouExit.csv");
+            try {
+
+                file.createNewFile();
+                CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
+
+                //data
+                ArrayList<String> listdata= new ArrayList<String>();
+                listdata.add("Aniket");
+                listdata.add("Shinde");
+                listdata.add("pune");
+                listdata.add("anything@anything");
+                //Headers
+                String arrStr1[] ={"First Name", "Last Name", "Address", "Email"};
+                csvWrite.writeNext(arrStr1);
+
+                String arrStr[] ={listdata.get(0), listdata.get(1), listdata.get(2), listdata.get(3)};
+                csvWrite.writeNext(arrStr);
+
+                csvWrite.close();
+                return "";
+            }
+            catch (IOException e){
+                Log.e("MainActivity", e.getMessage(), e);
+                return "";
+            }
+        }
+
+        @SuppressLint("NewApi")
+        @Override
+        protected void onPostExecute(final String success) {
+
+            if (this.dialog.isShowing()){
+                this.dialog.dismiss();
+            }
+            if (success.isEmpty()){
+                Toast.makeText(MainActivity.this, "Export successful!", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                Toast.makeText(MainActivity.this, "Export failed!", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
 }
 
 
