@@ -3,7 +3,6 @@ package com.google.android.gms.samples.vision.scanner4you;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
-import android.app.ProgressDialog;
 import android.content.ContentValues;
 import android.content.Context;
 import android.content.Intent;
@@ -11,41 +10,27 @@ import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Environment;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CompoundButton;
-import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
+import com.opencsv.CSVWriter;
 
 import java.io.BufferedReader;
-import java.io.BufferedWriter;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.io.OutputStreamWriter;
-import java.sql.SQLDataException;
-import java.util.ArrayList;
-import java.util.List;
-
-import static android.provider.Telephony.Mms.Part.FILENAME;
-import com.opencsv.CSVWriter;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -134,7 +119,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_export:
                 //Need more program code
                 //ExportFile();
-                exportDB();
+                //exportDB();
+
+                intent = new Intent(this, activity_export.class);
+                startActivity(intent);
+
                 break;
 
             default:
@@ -198,7 +187,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     if (str.length() == 18) {
                         insertOrUpdate(contentvalues);
                     }
-                    //database.insert(DBHelper.TABLE_CONTACTS, null, contentvalues);
+
 
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
@@ -223,7 +212,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else
             db.update(DBHelper.TABLE_CONTACTS, cv, "_id=?", new String[]{Integer.toString(id)});
     }
-
     private int getID(ContentValues cv) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"_id"}, "mainvalue =? AND value3=?",

@@ -48,6 +48,7 @@
             android:name="com.google.android.gms.samples.vision.scanner4you.TableActivity"
             android:label="@string/title_activity_table" />
         <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_import" />
+        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_export" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"
