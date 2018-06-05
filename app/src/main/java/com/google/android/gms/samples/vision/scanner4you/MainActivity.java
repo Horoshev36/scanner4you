@@ -4,10 +4,8 @@ import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.ContentValues;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.content.res.AssetManager;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
@@ -29,8 +27,6 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
 
 
 public class MainActivity extends Activity implements View.OnClickListener {
@@ -111,9 +107,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
             case R.id.btn_import:
                 Log.d("mLog", "Key insert pressed");
                 InsertFile insertFile = new InsertFile();
-
-
-                //Insert insert = new Insert(MainActivity.this);
                 break;
 
             case R.id.btn_export:
@@ -160,31 +153,36 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     for (int i = 0; i < subStr.length; i++) {
                         switch (i) {
                             case 0:
-                                if (subStr[i].length() == 1) {
-                                    contentvalues.put(DBHelper.KEY_CHAR, subStr[i]);
-                                }
+                                    contentvalues.put(DBHelper.KEY_Serial, subStr[i]);
                                 break;
                             case 1:
-                                if (subStr[i].length() == 4) {
-                                    contentvalues.put(DBHelper.KEY_VALUE, subStr[i]);
-                                }
+                                    contentvalues.put(DBHelper.KEY_Type, subStr[i]);
                                 break;
                             case 2:
-                                if (subStr[i].length() == 3) {
-                                    contentvalues.put(DBHelper.KEY_VALUE2, subStr[i]);
-                                }
+                                    contentvalues.put(DBHelper.KEY_Model, subStr[i]);
                                 break;
                             case 3:
-                                if (subStr[i].length() == 7) {
-                                    contentvalues.put(DBHelper.KEY_VALUE3, subStr[i]);
-                                }
+                                    contentvalues.put(DBHelper.KEY_Inventary, subStr[i]);
                                 break;
+                            case 4:
+                                contentvalues.put(DBHelper.KEY_Department, subStr[i]);
+                                break;
+                            case 5:
+                                contentvalues.put(DBHelper.KEY_ID, subStr[i]);
+                                break;
+
                             default:
                                 break;
                         }
 
                     }
-                    if (str.length() == 18) {
+                    if (contentvalues.get(DBHelper.KEY_Serial)!=null &&
+                            contentvalues.get(DBHelper.KEY_Type)!=null &&
+                            contentvalues.get(DBHelper.KEY_Model)!=null &&
+                            contentvalues.get(DBHelper.KEY_Inventary)!=null &&
+                            contentvalues.get(DBHelper.KEY_Department)!=null &&
+                            contentvalues.get(DBHelper.KEY_ID)!=null)
+                             {
                         insertOrUpdate(contentvalues);
                     }
 
@@ -214,8 +212,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     private int getID(ContentValues cv) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"_id"}, "mainvalue =? AND value3=?",
-                new String[]{cv.getAsString(DBHelper.KEY_CHAR), cv.getAsString(DBHelper.KEY_VALUE3)}, null, null, null, null);
+        Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"_id"}, "ID =? AND Serial=? AND Inventary=?",
+                new String[]{cv.getAsString(DBHelper.KEY_ID), cv.getAsString(DBHelper.KEY_Serial),cv.getAsString(DBHelper.KEY_Inventary)}, null, null, null, null);
 
         if (c.moveToFirst()) //if the row exist then return the id
             return c.getInt(c.getColumnIndex("_id"));
@@ -237,18 +235,28 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     db.beginTransaction();
                     while ((s = br.readLine()) != null) {
                         String[] colums = s.split(";");
-                        if (colums.length != 4) {
+                        if (colums.length != 6) {
                             Log.d("mLog", "Skipping Bad CSV Row");
                             continue;
                         }
-                        ContentValues contentvalues = new ContentValues(3);
+                        ContentValues contentvalues = new ContentValues(5);
 
-                        contentvalues.put(DBHelper.KEY_CHAR, colums[0].trim());
-                        contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
-                        contentvalues.put(DBHelper.KEY_VALUE2, colums[2].trim());
-                        contentvalues.put(DBHelper.KEY_VALUE3, colums[3].trim());
+                        contentvalues.put(DBHelper.KEY_Serial, colums[0].trim());
+                        contentvalues.put(DBHelper.KEY_Type, colums[1].trim());
+                        contentvalues.put(DBHelper.KEY_Model, colums[2].trim());
+                        contentvalues.put(DBHelper.KEY_Inventary, colums[3].trim());
+                        contentvalues.put(DBHelper.KEY_Department, colums[4].trim());
+                        contentvalues.put(DBHelper.KEY_ID, colums[5].trim());
 
-                        insertOrUpdate(contentvalues);
+                        if (contentvalues.get(DBHelper.KEY_Serial)!=null &&
+                                contentvalues.get(DBHelper.KEY_Type)!=null &&
+                                contentvalues.get(DBHelper.KEY_Model)!=null &&
+                                contentvalues.get(DBHelper.KEY_Inventary)!=null &&
+                                contentvalues.get(DBHelper.KEY_Department)!=null &&
+                                contentvalues.get(DBHelper.KEY_ID)!=null)
+                        {
+                            insertOrUpdate(contentvalues);
+                        }
 
                         System.out.println(s);
                     }
@@ -278,48 +286,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
         }
     }
 
-    public class Insert {
-        Insert(Context context) {
-            SQLiteDatabase db = dbHelper.getWritableDatabase();
-            //чтение файла
-            AssetManager manager = context.getAssets();
-            String mCSVfile = "stats.csv";
-            InputStream inStream = null;
-            try {
-                inStream = manager.open(mCSVfile);
-            } catch (IOException e) {
-                Log.d("mLog", "Ошибка");
-                e.printStackTrace();
-            }
-            //портирование csv в SQLite
-            BufferedReader buffer = new BufferedReader(new InputStreamReader(inStream));
-            String line = "";
-            db.beginTransaction();
-            Toast.makeText(getApplicationContext(), "Начало портирования", Toast.LENGTH_SHORT).show();
-            try {
-                while ((line = buffer.readLine()) != null) {
-                    String[] colums = line.split(";");
-                    if (colums.length != 4) {
-                        Log.d("mLog", "Skipping Bad CSV Row");
-                        continue;
-                    }
-                    ContentValues contentvalues = new ContentValues(3);
-
-                    contentvalues.put(DBHelper.KEY_CHAR, colums[0].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE, colums[1].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE2, colums[2].trim());
-                    contentvalues.put(DBHelper.KEY_VALUE3, colums[3].trim());
-
-                    insertOrUpdate(contentvalues);
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            db.setTransactionSuccessful();
-            db.endTransaction();
-            Toast.makeText(getApplicationContext(), "Конец портирования", Toast.LENGTH_SHORT).show();
-        }
-    }
 
     @SuppressLint({"SetWorldWritable", "SetWorldReadable"})
     private void exportDB() {

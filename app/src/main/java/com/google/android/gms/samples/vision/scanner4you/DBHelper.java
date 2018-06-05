@@ -6,15 +6,16 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class DBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
+    public static final int DATABASE_VERSION = 2;
     public static final String DATEBASE_NAME = "contactBD";
     public static final String TABLE_CONTACTS = "contacts";
 
     public static final String KEY_ID = "_id";
-    public static final String KEY_CHAR = "mainvalue";
-    public static final String KEY_VALUE = "value";
-    public static final String KEY_VALUE2 = "value2";
-    public static final String KEY_VALUE3 = "value3";
+    public static final String KEY_Serial = "Serial";
+    public static final String KEY_Type = "Type";
+    public static final String KEY_Model = "Model";
+    public static final String KEY_Inventary = "Inventary";
+    public static final String KEY_Department = "Department";
 
     public DBHelper(Context context) {
         super(context, DATEBASE_NAME, null, DATABASE_VERSION);
@@ -23,10 +24,11 @@ public class DBHelper extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase db) {
         db.execSQL("create table "+TABLE_CONTACTS+"("+KEY_ID+" int primary key,"
-                + KEY_CHAR+" text,"
-                + KEY_VALUE+" text,"
-                + KEY_VALUE2+" text,"
-                + KEY_VALUE3+" text"+
+                + KEY_Serial+" text,"
+                + KEY_Type+" text,"
+                + KEY_Model+" text,"
+                + KEY_Inventary+" text,"
+                + KEY_Department+" text"+
                 ")");
     }
 

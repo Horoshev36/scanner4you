@@ -39,7 +39,6 @@
         <activity
             android:name=".TableActivity"
             android:label="@string/title_activity_table" />
-        <activity android:name=".activity_import" />
         <activity android:name=".activity_export"></activity>
     </application>
 

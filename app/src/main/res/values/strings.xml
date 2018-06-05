@@ -17,4 +17,24 @@
     <string name="Table_text"> GGGGG
         \n\n
     </string>
+    <string name="action_settings">Settings</string>
+    <string name="action_cat_male">Кот</string>
+    <string name="action_cat_female">Кошка</string>
+    <string name="action_kitten">Котёнок</string>
+    <string name="app_name">DrawingNavigation</string>
+
+
+    <string-array name="views_array">
+        <item>Первый экран</item>
+        <item>Второй экран</item>
+        <item>Третий экран</item>
+    </string-array>
+    <string name="menu">Меню</string>
+    <string name="first_screen">Первый экран</string>
+    <string name="second_screen">Второй экран</string>
+    <string name="third_screen">Третий экран</string>
+    <string name="open_menu">Open</string>
+    <string name="close_menu">Close</string>
+
+
 </resources>
