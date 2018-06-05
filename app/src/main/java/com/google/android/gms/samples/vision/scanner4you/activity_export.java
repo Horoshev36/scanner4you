@@ -81,7 +81,7 @@ public class activity_export extends AppCompatActivity implements View.OnClickLi
             }
             SQLiteDatabase db = dbhelper.getReadableDatabase();
             Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
-            csvWrite.writeNext(curCSV.getColumnNames());
+            //csvWrite.writeNext(curCSV.getColumnNames());
             String arrStr[];
             while(curCSV.moveToNext())
             {
