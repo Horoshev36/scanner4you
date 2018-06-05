@@ -24,19 +24,11 @@
 
     <Button
         android:id="@+id/read_barcode"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:text="@string/read_barcode" />
-
-    <Button
-        android:id="@+id/btn_import"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/auto_focus"
-        android:layout_toStartOf="@+id/read_barcode"
-        android:text="Import" />
 
     <Switch
         android:id="@+id/auto_focus"
@@ -48,28 +40,12 @@
         android:checked="false"
         android:text="@string/auto_focus" />
 
-    <Button
-        android:id="@+id/btn_table"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/auto_focus"
-        android:layout_centerHorizontal="true"
-        android:text="SQLite" />
-
-    <Button
-        android:id="@+id/btn_export"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/auto_focus"
-        android:layout_toEndOf="@+id/read_barcode"
-        android:text="Export" />
-
     <Switch
         android:id="@+id/use_flash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/barcode_value"
-        android:layout_below="@+id/btn_import"
+        android:layout_alignParentEnd="true"
+        android:layout_alignTop="@+id/auto_focus"
         android:checked="false"
         android:text="@string/use_flash" />
 

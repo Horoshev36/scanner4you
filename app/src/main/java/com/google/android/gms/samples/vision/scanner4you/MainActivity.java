@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
@@ -49,6 +51,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private CompoundButton useFlash;
     private TextView statusMessage;
     private TextView barcodeValue;
+    boolean CHEEP=false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,14 +64,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         autoFocus = findViewById(R.id.auto_focus);
         useFlash = findViewById(R.id.use_flash);
 
-        btn_table = findViewById(R.id.btn_table);
-        btn_import = findViewById(R.id.btn_import);
-        btn_export = findViewById(R.id.btn_export);
 
-        findViewById(R.id.btn_table).setOnClickListener(this);
+
+
         findViewById(R.id.read_barcode).setOnClickListener(this);
-        findViewById(R.id.btn_import).setOnClickListener(this);
-        findViewById(R.id.btn_export).setOnClickListener(this);
+
 
 
         autoFocus.setChecked(true);
@@ -100,13 +100,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
             case R.id.btn_table:
                 // launch TABLE activity
-                intent = new Intent(this, TableActivity.class);
-                startActivity(intent);
+
                 break;
 
             case R.id.btn_import:
-                Log.d("mLog", "Key insert pressed");
-                InsertFile insertFile = new InsertFile();
+
                 break;
 
             case R.id.btn_export:
@@ -114,8 +112,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 //ExportFile();
                 //exportDB();
 
-                intent = new Intent(this, activity_export.class);
-                startActivity(intent);
+
 
                 break;
 
@@ -123,6 +120,42 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
                 break;
         }
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        int id = item.getItemId();
+        switch (id){
+            case 4:
+                item.setChecked(!item.isChecked());
+                CHEEP = item.isChecked();
+                break;
+            case R.id.action_table:
+                Intent intent;
+                intent = new Intent(this, TableActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.action_export:
+                exportDB(CHEEP);
+                break;
+            case R.id.action_import:
+                Log.d("mLog", "Key insert pressed");
+                InsertFile insertFile = new InsertFile();
+                break;
+
+        }
+
+        return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        menu.add(2,4,4,"Шифровать").setCheckable(true);
+
+
+        return true;
     }
 
     @Override
@@ -288,7 +321,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
     @SuppressLint({"SetWorldWritable", "SetWorldReadable"})
-    private void exportDB() {
+    private void exportDBone() {
 
         File dbFile=getDatabasePath("contactBD.db");
         DBHelper dbhelper = new DBHelper(getApplicationContext());
@@ -322,6 +355,56 @@ public class MainActivity extends Activity implements View.OnClickListener {
             new Message("Error");
         }
         catch(Exception sqlEx){
+            Log.e("mLog", sqlEx.getMessage(), sqlEx);
+            new Message("Error");
+        }
+    }
+
+    private void exportDB(boolean CHEEP) {
+
+        File dbFile=getDatabasePath("contactBD.db");
+        DBHelper dbhelper = new DBHelper(getApplicationContext());
+        File exportDir = new File("/sdcard/my-logs", "");
+
+        if (!exportDir.exists())
+        {
+            exportDir.mkdirs();
+        }
+
+        File file = new File(exportDir, "pouExit.csv");
+        try
+        {
+            file.createNewFile();
+            CSVWriter csvWrite=null;
+
+            if (CHEEP) {
+                csvWrite = new CSVWriter(new FileWriter(file), '*');
+            }else {
+                csvWrite = new CSVWriter(new FileWriter(file), ';');
+            }
+            SQLiteDatabase db = dbhelper.getReadableDatabase();
+            Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
+            //csvWrite.writeNext(curCSV.getColumnNames());
+            String arrStr[];
+            while(curCSV.moveToNext())
+            {
+                //Which column you want to exprort
+
+                if (CHEEP) {
+
+                    arrStr = new String[]{SecuritySettings.encrypt(curCSV.getString(4)), SecuritySettings.encrypt(curCSV.getString(1)),SecuritySettings.encrypt( curCSV.getString(2)), SecuritySettings.encrypt(curCSV.getString(3))};
+
+                }else {
+
+                    arrStr = new String[]{curCSV.getString(4), curCSV.getString(1), curCSV.getString(2), curCSV.getString(3)};
+
+                }
+                csvWrite.writeNext(arrStr);
+            }
+            csvWrite.close();
+            curCSV.close();
+            new Message("Success!");
+        } catch(Exception sqlEx){
             Log.e("mLog", sqlEx.getMessage(), sqlEx);
             new Message("Error");
         }

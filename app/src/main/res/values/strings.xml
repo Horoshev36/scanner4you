@@ -17,11 +17,11 @@
     <string name="Table_text"> GGGGG
         \n\n
     </string>
-    <string name="action_settings">Settings</string>
-    <string name="action_cat_male">Кот</string>
-    <string name="action_cat_female">Кошка</string>
-    <string name="action_kitten">Котёнок</string>
-    <string name="app_name">DrawingNavigation</string>
+    <string name="action_table">Показать данные в БД</string>
+    <string name="action_import">Импортировать CSV</string>
+    <string name="action_export">Экспортировать CSV</string>
+
+
 
 
     <string-array name="views_array">

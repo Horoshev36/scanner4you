@@ -60,16 +60,16 @@
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\anim\\abc_slide_in_bottom.xml"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
-        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
+        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\anim\\abc_slide_out_top.xml"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_notification_bg_normal.9.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a1ea394b5161826b619a0cde1c41088\\res\\drawable-mdpi-v4\\notification_bg_normal.9.png"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\anim_abc_slide_out_top.xml.flat",
-        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\anim\\abc_slide_out_top.xml"
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_list_divider_mtrl_alpha.9.png.flat",
+        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-hdpi-v4\\abc_list_divider_mtrl_alpha.9.png"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\layout_abc_search_view.xml.flat",
@@ -132,12 +132,12 @@
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-mdpi-v4\\abc_list_pressed_holo_dark.9.png"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-tvdpi-v4_common_plus_signin_btn_text_light_disabled.9.png.flat",
-        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.4.0.aar\\8ba5350833c3f84ceb35e388632208ed\\res\\drawable-tvdpi-v4\\common_plus_signin_btn_text_light_disabled.9.png"
-    },
-    {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_common_google_signin_btn_text_light_focused.9.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.4.0.aar\\8ba5350833c3f84ceb35e388632208ed\\res\\drawable-hdpi-v4\\common_google_signin_btn_text_light_focused.9.png"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-tvdpi-v4_common_plus_signin_btn_text_light_disabled.9.png.flat",
+        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.4.0.aar\\8ba5350833c3f84ceb35e388632208ed\\res\\drawable-tvdpi-v4\\common_plus_signin_btn_text_light_disabled.9.png"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxhdpi-v4_common_plus_signin_btn_icon_light_normal.9.png.flat",
@@ -148,12 +148,12 @@
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-xhdpi-v4\\abc_btn_radio_to_on_mtrl_015.png"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_text.xml.flat",
-        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\19206c84c2884d600fdcd90efe564aba\\res\\layout\\design_layout_tab_text.xml"
-    },
-    {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\layout_notification_template_part_chronometer.xml.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a1ea394b5161826b619a0cde1c41088\\res\\layout\\notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\layout_design_layout_tab_text.xml.flat",
+        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\design-27.1.1.aar\\19206c84c2884d600fdcd90efe564aba\\res\\layout\\design_layout_tab_text.xml"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-ldrtl-mdpi-v17_abc_spinner_mtrl_am_alpha.9.png.flat",
@@ -240,12 +240,12 @@
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\play-services-base-9.4.0.aar\\8ba5350833c3f84ceb35e388632208ed\\res\\drawable-hdpi-v4\\common_plus_signin_btn_text_dark_focused.9.png"
     },
     {
-        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
-        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
-    },
-    {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-hdpi-v4_abc_switch_track_mtrl_alpha.9.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-hdpi-v4\\abc_switch_track_mtrl_alpha.9.png"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_abc_popup_background_mtrl_mult.9.png.flat",
+        "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-27.1.1.aar\\7af9aa9c48c2fede86453712c5592e6d\\res\\drawable-mdpi-v4\\abc_popup_background_mtrl_mult.9.png"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xxxhdpi-v4_abc_btn_radio_to_on_mtrl_000.png.flat",
@@ -762,6 +762,10 @@
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
         "source": "C:\\Users\\Silicon\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-27.1.1.aar\\1a1ea394b5161826b619a0cde1c41088\\res\\drawable-xhdpi-v4\\notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\menu_main_menu.xml.flat",
+        "source": "E:\\PRG\\scanner4you\\app\\src\\main\\res\\menu\\main_menu.xml"
     },
     {
         "merged": "E:\\PRG\\scanner4you\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4_common_plus_signin_btn_text_light_normal.9.png.flat",

@@ -24,7 +24,7 @@
         android:label="Scanner4you"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppCompat" >
+        android:theme="@style/Theme.AppCompat.CompactMenu" >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -43,7 +43,8 @@
         </activity>
         <activity
             android:name="com.google.android.gms.samples.vision.scanner4you.BarcodeCaptureActivity"
-            android:label="Read Barcode" />
+            android:label="Read Barcode"
+            android:theme="@style/Theme.AppCompat" />
         <activity
             android:name="com.google.android.gms.samples.vision.scanner4you.TableActivity"
             android:label="@string/title_activity_table" />
