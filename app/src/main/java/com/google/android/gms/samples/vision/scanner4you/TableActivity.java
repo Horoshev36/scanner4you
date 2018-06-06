@@ -38,14 +38,14 @@ public class TableActivity extends Activity  {
             int value4Index = cursor.getColumnIndex(DBHelper.KEY_Department);
             int value5Index = cursor.getColumnIndex(DBHelper.KEY_ID);
             do {
-                mLog=null;
-                mLog = "Char = " + cursor.getString(charvalue) + "\n" +
+                //mLog=null;
+                mLog += "Char = " + cursor.getString(charvalue) + "\n" +
                         " value = " + cursor.getString(valueIndex) + "\n" +
                         " value2 = " + cursor.getString(value2Index) + "\n" +
                         " value3 = " + cursor.getString(value3Index) + "\n" +
                         " value4 = " + cursor.getString(value4Index) + "\n" +
                         " value5 = " + cursor.getString(value5Index) + "\n\n";
-                big_text.setText(mLog);
+                //big_text.setText(mLog);
             } while (cursor.moveToNext());
 
         } else

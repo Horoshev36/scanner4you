@@ -37,7 +37,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button btn_table;
     Button btn_import;
     Button btn_export;
-    String FILENAME_INPUT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files/pou.csv";
+    String FILENAME_INPUT = "/sdcard/pou.csv";
     String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files";
     //String FILENAME_INPUT = "pou.csv";
     //String FILENAME_EXPORT = "pouExit.csv";
@@ -245,11 +245,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
     private int getID(ContentValues cv) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
-        Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"_id"}, "ID =? AND Serial=? AND Inventary=?",
+        Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"id"}, "id =? AND Serial=? AND Inventary=?",
                 new String[]{cv.getAsString(DBHelper.KEY_ID), cv.getAsString(DBHelper.KEY_Serial),cv.getAsString(DBHelper.KEY_Inventary)}, null, null, null, null);
 
         if (c.moveToFirst()) //if the row exist then return the id
-            return c.getInt(c.getColumnIndex("_id"));
+            return c.getInt(c.getColumnIndex("id"));
         return -1;
     }
 
@@ -297,7 +297,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     db.endTransaction();
                     new Message("Конец портирования");
                 } catch (IOException ex) {
-
+                    new Message("Ошибка портирования");
                     System.out.println(ex.getMessage());
                 }
 
@@ -364,7 +364,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         File dbFile=getDatabasePath("contactBD.db");
         DBHelper dbhelper = new DBHelper(getApplicationContext());
-        File exportDir = new File("/sdcard/my-logs", "");
+        File exportDir = new File("/sdcard", "");
 
         if (!exportDir.exists())
         {

@@ -10,7 +10,7 @@ public class DBHelper extends SQLiteOpenHelper {
     public static final String DATEBASE_NAME = "contactBD";
     public static final String TABLE_CONTACTS = "contacts";
 
-    public static final String KEY_ID = "_id";
+    public static final String KEY_ID = "id";
     public static final String KEY_Serial = "Serial";
     public static final String KEY_Type = "Type";
     public static final String KEY_Model = "Model";
