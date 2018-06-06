@@ -241,7 +241,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
         if (id == -1)
             db.insert(DBHelper.TABLE_CONTACTS, null, cv);
         else
-            db.update(DBHelper.TABLE_CONTACTS, cv, "_id=?", new String[]{Integer.toString(id)});
+            db.update(DBHelper.TABLE_CONTACTS, cv, "id=?", new String[]{Integer.toString(id)});
     }
     private int getID(ContentValues cv) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
