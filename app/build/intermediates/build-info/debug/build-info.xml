@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="3.1.2"
-    timestamp="1528284944716"
+    timestamp="1528537779409"
     token="4508571363040543154"
     verifier="FULL_BUILD_REQUESTED" >
 
@@ -62,7 +62,7 @@
 
     <build
         build-mode="FULL"
-        timestamp="1528284944716"
+        timestamp="1528537779409"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
             location="E:\PRG\scanner4you\app\build\intermediates\split-apk\debug\slices\slice_8.apk"

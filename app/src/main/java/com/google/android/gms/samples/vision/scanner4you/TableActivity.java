@@ -38,14 +38,14 @@ public class TableActivity extends Activity  {
             int value4Index = cursor.getColumnIndex(DBHelper.KEY_Department);
             int value5Index = cursor.getColumnIndex(DBHelper.KEY_ID);
             do {
-                //mLog=null;
-                mLog += "Char = " + cursor.getString(charvalue) + "\n" +
-                        " value = " + cursor.getString(valueIndex) + "\n" +
-                        " value2 = " + cursor.getString(value2Index) + "\n" +
-                        " value3 = " + cursor.getString(value3Index) + "\n" +
-                        " value4 = " + cursor.getString(value4Index) + "\n" +
-                        " value5 = " + cursor.getString(value5Index) + "\n\n";
-                //big_text.setText(mLog);
+
+                mLog += " Серийный номер: " + cursor.getString(charvalue) + "\n" +
+                        " Тип оборудования: " + cursor.getString(valueIndex) + "\n" +
+                        " Модель: " + cursor.getString(value2Index) + "\n" +
+                        " Инвентарный номер: " + cursor.getString(value3Index) + "\n" +
+                        " Расположение: " + cursor.getString(value4Index) + "\n" +
+                        " ID: " + cursor.getString(value5Index) + "\n\n";
+
             } while (cursor.moveToNext());
 
         } else

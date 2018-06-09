@@ -34,9 +34,9 @@
         android:id="@+id/auto_focus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/read_barcode"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="77dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/barcode_value"
+        android:layout_marginBottom="85dp"
         android:checked="false"
         android:text="@string/auto_focus" />
 
@@ -44,7 +44,7 @@
         android:id="@+id/use_flash"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
+        android:layout_alignEnd="@+id/barcode_value"
         android:layout_alignTop="@+id/auto_focus"
         android:checked="false"
         android:text="@string/use_flash" />
@@ -58,5 +58,39 @@
         android:text="@string/barcode_header"
         android:textAlignment="center"
         android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/barcode_value"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView2"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView4"
+        android:layout_centerHorizontal="true" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView5"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>

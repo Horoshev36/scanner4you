@@ -3,7 +3,10 @@ package com.google.android.gms.samples.vision.scanner4you;
 import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.ContentValues;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -37,6 +40,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button btn_table;
     Button btn_import;
     Button btn_export;
+    Button btn_save;
+    Button btn_cancel;
     String FILENAME_INPUT = "/sdcard/pou.csv";
     String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files";
     //String FILENAME_INPUT = "pou.csv";
@@ -51,7 +56,22 @@ public class MainActivity extends Activity implements View.OnClickListener {
     private CompoundButton useFlash;
     private TextView statusMessage;
     private TextView barcodeValue;
-    boolean CHEEP=false;
+    TextView textView2;
+    TextView textView3;
+    TextView textView4;
+    TextView textView5;
+    TextView textView6;
+    boolean CHEEP = false;
+
+
+    AlertDialog.Builder ad;
+    Context context;
+
+    String title = "Проверьте правильность данных";
+    //String message = "Выбери пищу";//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    String button1String = "Сохранить";
+    String button2String = "Отменить";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,10 +80,14 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         statusMessage = findViewById(R.id.status_message);
         barcodeValue = findViewById(R.id.barcode_value);
+        textView2 = findViewById(R.id.textView2);
+        textView3 = findViewById(R.id.textView3);
+        textView4 = findViewById(R.id.textView4);
+        textView5 = findViewById(R.id.textView5);
+        textView6 = findViewById(R.id.textView6);
 
         autoFocus = findViewById(R.id.auto_focus);
         useFlash = findViewById(R.id.use_flash);
-
 
 
 
@@ -74,6 +98,8 @@ public class MainActivity extends Activity implements View.OnClickListener {
         autoFocus.setChecked(true);
 
         dbHelper = new DBHelper(this);
+
+
         int permissionStatusW = ContextCompat.checkSelfPermission(MainActivity.this,
                 Manifest.permission.WRITE_EXTERNAL_STORAGE);
         if (permissionStatusW == PackageManager.PERMISSION_GRANTED) {
@@ -111,22 +137,18 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 //Need more program code
                 //ExportFile();
                 //exportDB();
-
-
-
                 break;
 
-            default:
 
+            default:
                 break;
         }
     }
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
 
         int id = item.getItemId();
-        switch (id){
+        switch (id) {
             case 4:
                 item.setChecked(!item.isChecked());
                 CHEEP = item.isChecked();
@@ -141,61 +163,65 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 break;
             case R.id.action_import:
                 Log.d("mLog", "Key insert pressed");
-                InsertFile insertFile = new InsertFile();
+                OpenFileDialog fileDialog = new OpenFileDialog(this)
+                        .setFilter(".*\\.csv")
+                        .setOpenDialogListener(new OpenFileDialog.OpenDialogListener() {
+                            @Override
+                            public void OnSelectedFile(String fileName) {
+                                InsertFile insertFile = new InsertFile(fileName);
+                                Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
+                            }
+                        });
+                fileDialog.show();
+
                 break;
 
         }
 
         return super.onOptionsItemSelected(item);
     }
-
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        menu.add(2,4,4,"Шифровать").setCheckable(true);
+        menu.add(2, 4, 4, "Шифровать").setCheckable(true);
 
 
         return true;
     }
-
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
         SQLiteDatabase database = dbHelper.getWritableDatabase();
 
-        ContentValues contentvalues = new ContentValues();
+        final ContentValues contentvalues = new ContentValues();
 
         if (requestCode == RC_BARCODE_CAPTURE) {
             if (resultCode == CommonStatusCodes.SUCCESS) {
                 if (data != null) {
 
                     Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+                    Log.d("mLog", "Qr код найден");
                     statusMessage.setText(R.string.barcode_success);
-                    barcodeValue.setText(barcode.displayValue);
-                    Log.d("mLog", "Barcode read: " + barcode.displayValue);
-
 
                     String str = barcode.displayValue;
-
-
+                    Log.d("mLog", "Начало разбиения");
                     String[] subStr;
                     String delimeter = ";"; // Разделитель
                     subStr = str.split(delimeter);//subStr[i]= массив с данными строки (разбитый)
 
-
                     for (int i = 0; i < subStr.length; i++) {
                         switch (i) {
                             case 0:
-                                    contentvalues.put(DBHelper.KEY_Serial, subStr[i]);
+                                contentvalues.put(DBHelper.KEY_Serial, subStr[i]);
                                 break;
                             case 1:
-                                    contentvalues.put(DBHelper.KEY_Type, subStr[i]);
+                                contentvalues.put(DBHelper.KEY_Type, subStr[i]);
                                 break;
                             case 2:
-                                    contentvalues.put(DBHelper.KEY_Model, subStr[i]);
+                                contentvalues.put(DBHelper.KEY_Model, subStr[i]);
                                 break;
                             case 3:
-                                    contentvalues.put(DBHelper.KEY_Inventary, subStr[i]);
+                                contentvalues.put(DBHelper.KEY_Inventary, subStr[i]);
                                 break;
                             case 4:
                                 contentvalues.put(DBHelper.KEY_Department, subStr[i]);
@@ -203,23 +229,54 @@ public class MainActivity extends Activity implements View.OnClickListener {
                             case 5:
                                 contentvalues.put(DBHelper.KEY_ID, subStr[i]);
                                 break;
-
                             default:
                                 break;
                         }
-
                     }
-                    if (contentvalues.get(DBHelper.KEY_Serial)!=null &&
-                            contentvalues.get(DBHelper.KEY_Type)!=null &&
-                            contentvalues.get(DBHelper.KEY_Model)!=null &&
-                            contentvalues.get(DBHelper.KEY_Inventary)!=null &&
-                            contentvalues.get(DBHelper.KEY_Department)!=null &&
-                            contentvalues.get(DBHelper.KEY_ID)!=null)
-                             {
-                        insertOrUpdate(contentvalues);
+                    Log.d("mLog", "Конец разбития");
+                    if (contentvalues.get(DBHelper.KEY_Serial) != null &&
+                            contentvalues.get(DBHelper.KEY_Type) != null &&
+                            contentvalues.get(DBHelper.KEY_Model) != null &&
+                            contentvalues.get(DBHelper.KEY_Inventary) != null &&
+                            contentvalues.get(DBHelper.KEY_Department) != null &&
+                            contentvalues.get(DBHelper.KEY_ID) != null) {
+                        Log.d("mLog", "Вывод диалога");
+
+                        context = MainActivity.this;
+                        ad = new AlertDialog.Builder(context);
+                        ad.setTitle(title);  // заголовок
+                        ad.setMessage("Серийный номер: " + contentvalues.getAsString(DBHelper.KEY_Serial) + "\n" +
+                                         "Тип оборудования: " + contentvalues.getAsString(DBHelper.KEY_Type) + "\n" +
+                                          "Модель: " + contentvalues.getAsString(DBHelper.KEY_Inventary) + "\n" +
+                                             "Инвентарный номер: " + contentvalues.getAsString(DBHelper.KEY_Inventary) + "\n" +
+                                              "Расположение: " + contentvalues.getAsString(DBHelper.KEY_Department)); // сообщение
+                        ad.setPositiveButton(button1String, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int arg1) {
+                                insertOrUpdate(contentvalues);
+                                Toast.makeText(context, "Данные добавлены/обновлены", Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        ad.setNegativeButton(button2String, new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int arg1) {
+
+                                Log.d("mLog", "Cancel диалога");
+                            }
+                        });
+                        ad.setCancelable(true);
+                        ad.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                            public void onCancel(DialogInterface dialog) {
+                                Toast.makeText(context, "Вы ничего не выбрали",
+                                        Toast.LENGTH_LONG).show();
+                            }
+                        });
+                        ad.show();
+                        Log.d("mLog", "Конец диалога");
+
+                        //insertOrUpdate(contentvalues);
+                    }else {
+                        barcodeValue.setText(barcode.displayValue);
+                        Log.d("mLog", "Barcode read: " + barcode.displayValue);
                     }
-
-
                 } else {
                     statusMessage.setText(R.string.barcode_failure);
                     Log.d("mLog", "No barcode captured, intent data is null");
@@ -243,10 +300,11 @@ public class MainActivity extends Activity implements View.OnClickListener {
         else
             db.update(DBHelper.TABLE_CONTACTS, cv, "id=?", new String[]{Integer.toString(id)});
     }
+
     private int getID(ContentValues cv) {
         SQLiteDatabase db = dbHelper.getWritableDatabase();
         Cursor c = db.query(DBHelper.TABLE_CONTACTS, new String[]{"id"}, "id =? AND Serial=? AND Inventary=?",
-                new String[]{cv.getAsString(DBHelper.KEY_ID), cv.getAsString(DBHelper.KEY_Serial),cv.getAsString(DBHelper.KEY_Inventary)}, null, null, null, null);
+                new String[]{cv.getAsString(DBHelper.KEY_ID), cv.getAsString(DBHelper.KEY_Serial), cv.getAsString(DBHelper.KEY_Inventary)}, null, null, null, null);
 
         if (c.moveToFirst()) //if the row exist then return the id
             return c.getInt(c.getColumnIndex("id"));
@@ -254,7 +312,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
     public class InsertFile {
-        InsertFile() {
+        InsertFile(String fileName) {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             String s = "";
             new Message("Установка буффера");
@@ -262,7 +320,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                     Manifest.permission.READ_EXTERNAL_STORAGE);
             if (permissionStatusR == PackageManager.PERMISSION_GRANTED) {
                 try (BufferedReader br = new BufferedReader(new FileReader
-                        (FILENAME_INPUT))) {
+                        (fileName))) {
                     //чтение построчно
                     new Message("Начало портирования");
                     db.beginTransaction();
@@ -281,13 +339,12 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         contentvalues.put(DBHelper.KEY_Department, colums[4].trim());
                         contentvalues.put(DBHelper.KEY_ID, colums[5].trim());
 
-                        if (contentvalues.get(DBHelper.KEY_Serial)!=null &&
-                                contentvalues.get(DBHelper.KEY_Type)!=null &&
-                                contentvalues.get(DBHelper.KEY_Model)!=null &&
-                                contentvalues.get(DBHelper.KEY_Inventary)!=null &&
-                                contentvalues.get(DBHelper.KEY_Department)!=null &&
-                                contentvalues.get(DBHelper.KEY_ID)!=null)
-                        {
+                        if (contentvalues.get(DBHelper.KEY_Serial) != null &&
+                                contentvalues.get(DBHelper.KEY_Type) != null &&
+                                contentvalues.get(DBHelper.KEY_Model) != null &&
+                                contentvalues.get(DBHelper.KEY_Inventary) != null &&
+                                contentvalues.get(DBHelper.KEY_Department) != null &&
+                                contentvalues.get(DBHelper.KEY_ID) != null) {
                             insertOrUpdate(contentvalues);
                         }
 
@@ -313,8 +370,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
             Toast.makeText(getApplicationContext(), s, Toast.LENGTH_SHORT).show();
         }
     }
-    public static class LogMessage{
-        LogMessage(String s){
+
+    public static class LogMessage {
+        LogMessage(String s) {
             Log.d("mLog", s);
         }
     }
@@ -323,38 +381,34 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @SuppressLint({"SetWorldWritable", "SetWorldReadable"})
     private void exportDBone() {
 
-        File dbFile=getDatabasePath("contactBD.db");
+        File dbFile = getDatabasePath("contactBD.db");
         DBHelper dbhelper = new DBHelper(getApplicationContext());
         File exportDir = new File("/sdcard/my-logs", "");
 
-        if (!exportDir.exists())
-        {
+        if (!exportDir.exists()) {
             exportDir.mkdirs();
         }
 
         File file = new File(exportDir, "pouExit.csv");
-        try
-        {
+        try {
             file.createNewFile();
 
             CSVWriter csvWrite = new CSVWriter(new FileWriter(file), ';');
             SQLiteDatabase db = dbhelper.getReadableDatabase();
-            Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
+            Cursor curCSV = db.rawQuery("SELECT * FROM contacts", null);
             csvWrite.writeNext(curCSV.getColumnNames());
-            while(curCSV.moveToNext())
-            {
+            while (curCSV.moveToNext()) {
                 //Which column you want to exprort
-                String arrStr[] ={curCSV.getString(4),curCSV.getString(1), curCSV.getString(2),curCSV.getString(3)};
+                String arrStr[] = {curCSV.getString(4), curCSV.getString(1), curCSV.getString(2), curCSV.getString(3)};
                 csvWrite.writeNext(arrStr);
             }
             csvWrite.close();
             curCSV.close();
             new Message("Success!");
-        } catch(IOException IoEx)        {
+        } catch (IOException IoEx) {
             Log.e("mLog", IoEx.getMessage(), IoEx);
             new Message("Error");
-        }
-        catch(Exception sqlEx){
+        } catch (Exception sqlEx) {
             Log.e("mLog", sqlEx.getMessage(), sqlEx);
             new Message("Error");
         }
@@ -362,39 +416,36 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
     private void exportDB(boolean CHEEP) {
 
-        File dbFile=getDatabasePath("contactBD.db");
+        File dbFile = getDatabasePath("contactBD.db");
         DBHelper dbhelper = new DBHelper(getApplicationContext());
         File exportDir = new File("/sdcard", "");
 
-        if (!exportDir.exists())
-        {
+        if (!exportDir.exists()) {
             exportDir.mkdirs();
         }
 
         File file = new File(exportDir, "pouExit.csv");
-        try
-        {
+        try {
             file.createNewFile();
-            CSVWriter csvWrite=null;
+            CSVWriter csvWrite = null;
 
             if (CHEEP) {
                 csvWrite = new CSVWriter(new FileWriter(file), '*');
-            }else {
+            } else {
                 csvWrite = new CSVWriter(new FileWriter(file), ';');
             }
             SQLiteDatabase db = dbhelper.getReadableDatabase();
-            Cursor curCSV = db.rawQuery("SELECT * FROM contacts",null);
+            Cursor curCSV = db.rawQuery("SELECT * FROM contacts", null);
             //csvWrite.writeNext(curCSV.getColumnNames());
             String arrStr[];
-            while(curCSV.moveToNext())
-            {
+            while (curCSV.moveToNext()) {
                 //Which column you want to exprort
 
                 if (CHEEP) {
 
-                    arrStr = new String[]{SecuritySettings.encrypt(curCSV.getString(4)), SecuritySettings.encrypt(curCSV.getString(1)),SecuritySettings.encrypt( curCSV.getString(2)), SecuritySettings.encrypt(curCSV.getString(3))};
+                    arrStr = new String[]{SecuritySettings.encrypt(curCSV.getString(4)), SecuritySettings.encrypt(curCSV.getString(1)), SecuritySettings.encrypt(curCSV.getString(2)), SecuritySettings.encrypt(curCSV.getString(3))};
 
-                }else {
+                } else {
 
                     arrStr = new String[]{curCSV.getString(4), curCSV.getString(1), curCSV.getString(2), curCSV.getString(3)};
 
@@ -404,9 +455,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
             csvWrite.close();
             curCSV.close();
             new Message("Success!");
-        } catch(Exception sqlEx){
+        } catch (Exception sqlEx) {
             Log.e("mLog", sqlEx.getMessage(), sqlEx);
             new Message("Error");
         }
     }
-}
+
+
+       void showADialog(String message, final ContentValues cv) {
+
+
+        }
+    }

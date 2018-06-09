@@ -1,4 +1,4 @@
-#Tue Jun 05 18:15:36 MSK 2018
-base.0=E\:\\PRG\\scanner4you\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\11
+#Sat Jun 09 11:58:08 MSK 2018
+base.0=E\:\\PRG\\scanner4you\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\28
 path.0=classes.dex
 renamed.0=classes.dex
