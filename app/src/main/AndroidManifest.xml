@@ -9,6 +9,11 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+
     <application
         android:allowBackup="true"
         android:fullBackupContent="false"
@@ -16,7 +21,8 @@
         android:icon="@drawable/icon"
         android:label="Scanner4you"
         android:supportsRtl="true"
-        android:theme="@style/Theme.AppCompat.CompactMenu">
+        android:theme="@style/RGS_Red"
+        >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -26,22 +32,29 @@
 
         <activity
             android:name=".MainActivity"
-            android:label="@string/title_activity_main">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            android:label="@string/title_activity_main"
+            >
         </activity>
         <activity
             android:name=".BarcodeCaptureActivity"
             android:label="Read Barcode"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
+            android:theme="@style/RGS_RedBarcode"
+             />
         <activity
             android:name=".TableActivity"
-            android:label="@string/title_activity_table" />
-        <activity android:name=".activity_export" />
-        <activity android:name=".activity_press"></activity>
+            android:label="@string/title_activity_table"
+            />
+        <activity android:name=".activity_export"
+            />
+        <activity android:name=".activity_press"
+             />
+        <activity android:name=".activity_login"
+            >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="RGS_Red" parent="Theme.AppCompat.Light.NoActionBar" >
+        <item name="colorPrimary">@color/colorRED</item>
+        <item name="colorAccent">@color/colorRED</item>
+        <item name="colorPrimaryDark">@color/colorR_Dark</item>
+        <item name="android:colorForeground">@color/white</item>
+    </style>
+
+    <style name="Theme.RGS_Red.DayNight.DarkActionBar" parent="Theme.AppCompat.DayNight.DarkActionBar" >
+        <item name="colorPrimary">@color/colorRED</item>
+        <item name="colorPrimaryDark">@color/colorR_Dark</item>
+        <item name="colorAccent">@color/colorRED</item>
+    </style>
+</resources>

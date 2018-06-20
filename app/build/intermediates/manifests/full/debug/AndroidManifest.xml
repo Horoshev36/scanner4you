@@ -6,7 +6,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="19"
+        android:minSdkVersion="21"
         android:targetSdkVersion="27" />
 
     <uses-feature android:name="android.hardware.camera" />
@@ -14,6 +14,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <!-- To auto-complete the email text field in the login form with the user's emails -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+    <uses-permission android:name="android.permission.READ_PROFILE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
 
     <application
         android:allowBackup="true"
@@ -24,7 +29,7 @@
         android:label="Scanner4you"
         android:supportsRtl="true"
         android:testOnly="true"
-        android:theme="@style/Theme.AppCompat.CompactMenu" >
+        android:theme="@style/RGS_Red" >
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
@@ -35,21 +40,23 @@
         <activity
             android:name="com.google.android.gms.samples.vision.scanner4you.MainActivity"
             android:label="@string/title_activity_main" >
+        </activity>
+        <activity
+            android:name="com.google.android.gms.samples.vision.scanner4you.BarcodeCaptureActivity"
+            android:label="Read Barcode"
+            android:theme="@style/RGS_RedBarcode" />
+        <activity
+            android:name="com.google.android.gms.samples.vision.scanner4you.TableActivity"
+            android:label="@string/title_activity_table" />
+        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_export" />
+        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_press" />
+        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_login" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.google.android.gms.samples.vision.scanner4you.BarcodeCaptureActivity"
-            android:label="Read Barcode"
-            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
-        <activity
-            android:name="com.google.android.gms.samples.vision.scanner4you.TableActivity"
-            android:label="@string/title_activity_table" />
-        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_export" />
-        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_press" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

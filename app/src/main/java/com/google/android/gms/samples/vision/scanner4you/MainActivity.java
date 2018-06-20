@@ -20,6 +20,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CompoundButton;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.google.android.gms.common.api.CommonStatusCodes;
@@ -58,6 +60,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     TextView textView5;
     TextView textView6;
     boolean CHEEP = false;
+    ImageView GO;
 
 
     AlertDialog.Builder ad;
@@ -73,13 +76,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        GO=findViewById(R.id.imageView2);
         statusMessage = findViewById(R.id.status_message);
         barcodeValue = findViewById(R.id.barcode_value);
-        textView2 = findViewById(R.id.textView2);
-        textView3 = findViewById(R.id.textView3);
-        textView4 = findViewById(R.id.textView4);
-        textView5 = findViewById(R.id.textView5);
-        textView6 = findViewById(R.id.textView6);
+
 
         autoFocus = findViewById(R.id.auto_focus);
         useFlash = findViewById(R.id.use_flash);
@@ -87,6 +87,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
 
         findViewById(R.id.read_barcode).setOnClickListener(this);
+        GO.setOnClickListener(this);
 
 
 
@@ -101,6 +102,10 @@ public class MainActivity extends Activity implements View.OnClickListener {
         } else {
             ActivityCompat.requestPermissions(MainActivity.this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     REQUEST_CODE_PERMISSION_WRITE_EXTERNAL_STORAGE);
+            Intent intent;
+            intent = new Intent(this, activity_login.class);
+            startActivity(intent);
+            finish();
         }
     }
 
@@ -118,9 +123,13 @@ public class MainActivity extends Activity implements View.OnClickListener {
                 startActivityForResult(intent, RC_BARCODE_CAPTURE);
                 break;
 
-            case R.id.btn_table:
-                // launch TABLE activity
+            case R.id.imageView2:
+                // launch barcode activity.
+                intent = new Intent(this, BarcodeCaptureActivity.class);
+                intent.putExtra(BarcodeCaptureActivity.AutoFocus, autoFocus.isChecked());
+                intent.putExtra(BarcodeCaptureActivity.UseFlash, useFlash.isChecked());
 
+                startActivityForResult(intent, RC_BARCODE_CAPTURE);
                 break;
 
             case R.id.btn_import:

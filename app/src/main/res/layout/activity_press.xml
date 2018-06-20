@@ -22,9 +22,9 @@
         android:layout_above="@+id/editText2"
         android:layout_centerHorizontal="true"
         android:ems="10"
-        android:inputType="text|textPersonName"
         android:hint="Серийный номер"
-        />
+        android:inputType="text|textPersonName"
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editText2"
@@ -33,8 +33,9 @@
         android:layout_above="@+id/editText3"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:hint="Тип оборудования"
         android:inputType="textPersonName"
-        android:hint="Тип оборудования" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editText3"
@@ -43,8 +44,9 @@
         android:layout_above="@+id/editText4"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:hint="Модель"
         android:inputType="textPersonName"
-        android:hint="Модель" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editText4"
@@ -52,28 +54,30 @@
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
         android:ems="10"
+        android:hint="Инвентарный номер"
         android:inputType="textPersonName"
-        android:hint="Инвентарный номер" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editText5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/editText6"
+        android:layout_below="@+id/editText4"
         android:layout_centerHorizontal="true"
         android:ems="10"
+        android:hint="Расположение"
         android:inputType="textPersonName"
-        android:hint="Расположение" />
+        android:textColor="@color/black" />
 
     <EditText
         android:id="@+id/editText6"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:layout_below="@+id/editText5"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="136dp"
         android:ems="10"
+        android:hint="Уникальный индефикатор"
         android:inputType="textPersonName"
-        android:hint="Уникальный индефикатор" />
+        android:textColor="@color/black" />
 
 </RelativeLayout>
