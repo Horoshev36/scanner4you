@@ -12,6 +12,7 @@
             <option value="$PROJECT_DIR$/importmodule" />
             <option value="$PROJECT_DIR$/opencsv-1.7" />
             <option value="$PROJECT_DIR$/opencsv-2.4" />
+            <option value="$PROJECT_DIR$/selectshow" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

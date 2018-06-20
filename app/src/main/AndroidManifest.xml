@@ -36,11 +36,12 @@
         <activity
             android:name=".BarcodeCaptureActivity"
             android:label="Read Barcode"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
             android:name=".TableActivity"
             android:label="@string/title_activity_table" />
-        <activity android:name=".activity_export"></activity>
+        <activity android:name=".activity_export" />
+        <activity android:name=".activity_press"></activity>
     </application>
 
 </manifest>

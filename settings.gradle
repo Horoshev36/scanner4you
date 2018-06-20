@@ -1,1 +1,1 @@
-include ':app', ':opencsv-1.7', ':importmodule', ':opencsv-2.4'
+include ':app', ':opencsv-1.7', ':importmodule', ':opencsv-2.4', ':selectshow'

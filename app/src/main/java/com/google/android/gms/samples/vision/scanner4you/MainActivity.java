@@ -22,11 +22,9 @@ import android.widget.Button;
 import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.common.api.CommonStatusCodes;
 import com.google.android.gms.vision.barcode.Barcode;
 import com.opencsv.CSVWriter;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
@@ -40,17 +38,15 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Button btn_table;
     Button btn_import;
     Button btn_export;
-    Button btn_save;
-    Button btn_cancel;
-    String FILENAME_INPUT = "/sdcard/pou.csv";
-    String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files";
+    //String FILENAME_INPUT = "/sdcard/pou.csv";
+    //String FILENAME_EXPORT = "/storage/32FC-8A50/Android/data/com.google.android.gms/files";
     //String FILENAME_INPUT = "pou.csv";
     //String FILENAME_EXPORT = "pouExit.csv";
 
     public static final int REQUEST_CODE_PERMISSION_READ_EXTERNAL_STORAGE = 1;
     public static final int REQUEST_CODE_PERMISSION_WRITE_EXTERNAL_STORAGE = 1;
     private static final int RC_BARCODE_CAPTURE = 9001;
-    private static final String TAG = "BarcodeMain";
+    //private static final String TAG = "BarcodeMain";
     // use a compound button so either checkbox or switch widgets work.
     private CompoundButton autoFocus;
     private CompoundButton useFlash;
@@ -68,7 +64,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     Context context;
 
     String title = "Проверьте правильность данных";
-    //String message = "Выбери пищу";//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     String button1String = "Сохранить";
     String button2String = "Отменить";
 
@@ -112,7 +107,6 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View v) {
 
-        SQLiteDatabase db = dbHelper.getWritableDatabase();
         //main
         switch (v.getId()) {
             case R.id.read_barcode:
@@ -149,12 +143,17 @@ public class MainActivity extends Activity implements View.OnClickListener {
 
         int id = item.getItemId();
         switch (id) {
-            case 4:
+            case 105:
+                Intent intent;
+                intent = new Intent(this, activity_press.class);
+                startActivity(intent);
+                break;
+            case 104:
                 item.setChecked(!item.isChecked());
                 CHEEP = item.isChecked();
                 break;
             case R.id.action_table:
-                Intent intent;
+
                 intent = new Intent(this, TableActivity.class);
                 startActivity(intent);
                 break;
@@ -168,7 +167,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
                         .setOpenDialogListener(new OpenFileDialog.OpenDialogListener() {
                             @Override
                             public void OnSelectedFile(String fileName) {
-                                InsertFile insertFile = new InsertFile(fileName);
+                                new InsertFile(fileName);
                                 Toast.makeText(getApplicationContext(), fileName, Toast.LENGTH_LONG).show();
                             }
                         });
@@ -183,7 +182,9 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
-        menu.add(2, 4, 4, "Шифровать").setCheckable(true);
+        menu.add(2, 104, 4, "Шифровать").setCheckable(true);
+        menu.add(2, 105, 4, "Аналоговый ввод");
+
 
 
         return true;
@@ -191,7 +192,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-        SQLiteDatabase database = dbHelper.getWritableDatabase();
+
 
         final ContentValues contentvalues = new ContentValues();
 
@@ -314,7 +315,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public class InsertFile {
         InsertFile(String fileName) {
             SQLiteDatabase db = dbHelper.getWritableDatabase();
-            String s = "";
+            String s;
             new Message("Установка буффера");
             int permissionStatusR = ContextCompat.checkSelfPermission(MainActivity.this,
                     Manifest.permission.READ_EXTERNAL_STORAGE);
@@ -462,8 +463,4 @@ public class MainActivity extends Activity implements View.OnClickListener {
     }
 
 
-       void showADialog(String message, final ContentValues cv) {
-
-
-        }
     }

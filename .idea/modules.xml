@@ -7,6 +7,7 @@
       <module fileurl="file://$PROJECT_DIR$/opencsv-1.7/opencsv-1.7.iml" filepath="$PROJECT_DIR$/opencsv-1.7/opencsv-1.7.iml" />
       <module fileurl="file://$PROJECT_DIR$/opencsv-2.4/opencsv-2.4.iml" filepath="$PROJECT_DIR$/opencsv-2.4/opencsv-2.4.iml" />
       <module fileurl="file://$PROJECT_DIR$/scanner4you.iml" filepath="$PROJECT_DIR$/scanner4you.iml" />
+      <module fileurl="file://$PROJECT_DIR$/selectshow/selectshow.iml" filepath="$PROJECT_DIR$/selectshow/selectshow.iml" />
     </modules>
   </component>
 </project>

@@ -44,11 +44,12 @@
         <activity
             android:name="com.google.android.gms.samples.vision.scanner4you.BarcodeCaptureActivity"
             android:label="Read Barcode"
-            android:theme="@style/Theme.AppCompat" />
+            android:theme="@style/Theme.AppCompat.DayNight.DarkActionBar" />
         <activity
             android:name="com.google.android.gms.samples.vision.scanner4you.TableActivity"
             android:label="@string/title_activity_table" />
         <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_export" />
+        <activity android:name="com.google.android.gms.samples.vision.scanner4you.activity_press" />
         <activity
             android:name="com.google.android.gms.common.api.GoogleApiActivity"
             android:exported="false"

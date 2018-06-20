@@ -22,8 +22,6 @@
     <string name="action_export">Экспортировать CSV</string>
 
 
-
-
     <string-array name="views_array">
         <item>Первый экран</item>
         <item>Второй экран</item>
