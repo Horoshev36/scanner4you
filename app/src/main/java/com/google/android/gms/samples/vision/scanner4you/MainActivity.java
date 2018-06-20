@@ -183,7 +183,7 @@ public class MainActivity extends Activity implements View.OnClickListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.main_menu, menu);
         menu.add(2, 104, 4, "Шифровать").setCheckable(true);
-        menu.add(2, 105, 4, "Аналоговый ввод");
+        menu.add(2, 105, 4, "Ввод данных");
 
 
 

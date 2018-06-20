@@ -21,24 +21,41 @@ public class activity_press extends Activity implements View.OnClickListener {
     EditText editText6;
     ContentValues contentvalues = new ContentValues();
     DBHelper dbHelper;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        dbHelper = new DBHelper(this);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_press);
 
         SAVE=findViewById(R.id.button2);
-            }
+        SAVE.setOnClickListener(this);
+        editText = findViewById(R.id.editText);
+        editText2 = findViewById(R.id.editText2);
+        editText3 = findViewById(R.id.editText3);
+        editText4 = findViewById(R.id.editText4);
+        editText5 = findViewById(R.id.editText5);
+        editText6 = findViewById(R.id.editText6);
+    }
 
 
     @Override
     public void onClick(View v) {
-
+        if (editText != null &&
+                editText2 != null &&
+                editText3 != null &&
+                editText4 != null &&
+                editText5 != null &&
+                editText6 != null)
+        {
         contentvalues.put(DBHelper.KEY_Serial, String.valueOf(editText.getText()));
         contentvalues.put(DBHelper.KEY_Type, String.valueOf(editText2.getText()));
         contentvalues.put(DBHelper.KEY_Model, String.valueOf(editText3.getText()));
         contentvalues.put(DBHelper.KEY_Inventary, String.valueOf(editText4.getText()));
         contentvalues.put(DBHelper.KEY_Department, String.valueOf(editText5.getText()));
         contentvalues.put(DBHelper.KEY_ID, String.valueOf(editText6.getText()));
+
+    }   else new Message("Проверьте правильность введенных данных!");
 
         if (contentvalues.get(DBHelper.KEY_Serial) != null &&
                 contentvalues.get(DBHelper.KEY_Type) != null &&
